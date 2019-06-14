@@ -1,0 +1,464 @@
+<!doctype html>
+<html class="no-js">
+<head><% include("admin_head.html",{title: '添加/编辑广告位信息',loadUE:
+true,validatorJS: true, livequeryJS: true}){}%> <%var isAdd = false; var
+isEdit = false; if(isEmpty(advertisement.id)){ isAdd = true; }else{ isEdit =
+true; }%>
+
+
+</head>
+<body>
+	<!-- content start -->
+	<div class="admin-content">
+		<div class="admin-content-body">
+			<div class="am-cf app-padding-title">
+				<div class="am-fl am-cf">
+					<strong class="am-text-primary am-text-lg">广告位管理</strong> / <small><%if(isAdd){%>添加广告位<%}else{%>编辑广告位<%}%></small>
+				</div>
+			</div>
+
+			<hr data-am-widget="divider"
+				class="am-divider am-divider-dashed am-margin-0" />
+
+			<form class="validator-form"
+				action="<%if (isAdd){%>/advertisement/save<%}else{%>/advertisement/update<%}%>"
+				enctype="multipart/form-data" method="post" name="myForm">
+				<input type="hidden" id="shopId" name="shopId" value="${shopId!}" />
+				<input type="hidden" id="advertisementId" name="advertisementId" value="${advertisementId!}" />
+				<div class="am-tabs am-margin" data-am-tabs="{noSwipe: 1}">
+					<ul class="am-tabs-nav am-nav am-nav-tabs">
+						<li class="am-active"><a href="#tab1">基本信息</a></li>
+						<li><a href="#tab2">广告图片</a></li>
+					</ul>
+
+					<div class="am-tabs-bd am-form">
+						<div
+							class="am-tab-panel am-fade am-in am-active am-form-horizontal"
+							id="tab1">
+							<div class="am-form-group am-form-group-sm">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">广告名称</label>
+								<div class="am-u-sm-8 am-u-md-9">
+									<input type="text"
+										class="am-form-field js-pattern-username" name="adverName"
+										placeholder="广告名称" minlength="2" maxlength="20" required  value="${advertisement.adverName!}"/>
+								</div>
+							</div>
+                            <%if (isAdd){%>
+							<div class="am-form-group am-form-group-sm">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">广告位置</label>
+								<div class="am-u-sm-8 am-u-md-9">
+									  <select name="position" data-am-selected="{btnWidth: '100%', maxHeight: '200px', btnSize: 'sm'}" required>
+						              	<option value="1"selected>首页BANNER广告位</option>
+						              	<option value="2">首页第二广告位</option>
+						              </select>
+								</div>
+							</div>
+
+							<div class="am-form-group am-form-group-sm">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">广告类型</label>
+								<div class="am-u-sm-8 am-u-md-9">
+								<select  name="type" data-am-selected="{btnWidth: '100%', maxHeight: '200px', btnSize: 'sm'}" required onchange="showSelectValue(this)">
+						              	<option value="1" selected>网站链接</option>
+						              	<option value="2">商品详情</option>
+						        </select>
+								</div>
+							</div>
+							<%}%>
+							
+							<%if (isEdit){%>
+							<%if (advertisement.type=="1"){%>
+							<div id="adverAddress" class="am-form-group am-form-group-sm" style="display:block;">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label" >广告地址</label>
+								<div class="am-u-sm-8 am-u-md-9">
+									<input type="text"
+										class="am-form-field" name="notifyUrl"
+										placeholder="广告地址" value="${advertisement.notifyUrl!}"/>
+								</div>
+							</div>
+							<%}%>
+							<%if (advertisement.type=="2"){%>
+							<div id="goodId" class="am-form-group am-form-group-sm" style="display:block;">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label" >商品名称</label>
+								<div class="am-u-sm-8 am-u-md-9">
+								<input type="hidden" id="productId" name="productId" />
+					            <input type="text" class="am-form-field"  id="goodName" name="goodName" value="${advertisement.goodName!}" onkeyup="test(this.value,event)"><br/>
+								<select multiple="multiple" id="sel" onchange="test2()"
+									style="width:300px;display:none">
+								</select>
+								</div>
+							</div>
+                            <%}%>
+                            <%}%>
+                            
+                            <%if (isAdd){%>
+							<div id="adverAddress" class="am-form-group am-form-group-sm" style="display:block;">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label" >广告地址</label>
+								<div class="am-u-sm-8 am-u-md-9">
+									<input type="text"
+										class="am-form-field" name="notifyUrl"
+										placeholder="广告地址" value="${advertisement.notifyUrl!}"/>
+								</div>
+							</div>
+							<div id="goodId" class="am-form-group am-form-group-sm" style="display:none;">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label" >商品名称</label>
+								<div class="am-u-sm-8 am-u-md-9">
+								<input type="hidden" id="productId" name="productId" />
+					            <input type="text" class="am-form-field"  id="goodName" name="goodName" value="${advertisement.goodName!}" onkeyup="test(this.value,event)"><br/>
+								<select multiple="multiple" id="sel" onchange="test2()"
+									style="width:300px;display:none">
+								</select>
+								</div>
+							</div>
+                            <%}%>
+							<div class="am-form-group am-form-group-sm">
+								<label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">排列序号</label>
+								<div class="am-u-sm-8 am-u-md-9">
+									<input type="number" min="0" class="am-form-field" name="number"
+										placeholder="广告序号" maxlength="20" required  value="${advertisement.number!}"/>
+								</div>
+							</div>
+							
+							<div class="am-form-group am-form-group-sm">
+					            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">是否上架</label>
+					            <div class="am-u-sm-8 am-u-md-9 am-btn-group" data-am-button>
+					                <label class="am-btn am-btn-default am-btn-xs">
+					                  <input type="radio" name="onShelf" value="1" <%if (isAdd){%> checked<%}%>> 是
+					                </label>
+					                <label class="am-btn am-btn-default am-btn-xs">
+					                  <input type="radio" name="onShelf" value="0"> 否
+					                </label>
+					            </div>
+					          </div>
+							
+
+						</div>
+						<div class="am-tab-panel am-fade app-min-height app-product-image"
+							id="tab2">
+							<ul class="am-avg-sm-2 am-avg-md-4 am-thumbnails" id="file-list">
+							
+							    <%if (isAdd){%>
+								<%for(list in advertisement.imageUrl!){%>
+								<li>
+									<div class="am-thumbnail">
+										<input type="hidden" name="productImageIds" value="${list.id}" />
+										<input type="hidden" name="productImageParameterTypes"
+											value="productImageId" /> <img src="${list.url}"
+											class="am-img-bdrs">
+										<ul class="am-thumbnail-caption am-avg-sm-3">
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left">
+													<span class="am-icon-chevron-left"></span>
+												</button></li>
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete">
+													<span class="am-icon-trash"></span>
+												</button></li>
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right">
+													<span class="am-icon-chevron-right"></span>
+												</button></li>
+										</ul>
+										<hr data-am-widget="divider"
+											class="am-divider am-divider-dashed am-margin-0" />
+										<ul class="am-thumbnail-caption am-avg-sm-1">
+											<li>
+												<div class="am-form-group am-form-file">
+													<button type="button"
+														class="am-btn am-btn-success am-btn-xs am-center"
+														disabled="disabled">
+														<i class="am-icon-info-circle"></i> 已经上传
+													</button>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li> <%}%><%}else{%>
+								<li>
+									<div class="am-thumbnail">
+										<input type="hidden" name="productImageIds" value="${advertisement.imageUrl}" />
+										<input type="hidden" name="productImageParameterTypes"
+											value="productImageId" /> <img src="${advertisement.imageUrl}"
+											class="am-img-bdrs">
+										<ul class="am-thumbnail-caption am-avg-sm-3">
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left">
+													<span class="am-icon-chevron-left"></span>
+												</button></li>
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete">
+													<span class="am-icon-trash"></span>
+												</button></li>
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right">
+													<span class="am-icon-chevron-right"></span>
+												</button></li>
+										</ul>
+										<hr data-am-widget="divider"
+											class="am-divider am-divider-dashed am-margin-0" />
+										<ul class="am-thumbnail-caption am-avg-sm-1">
+											<li>
+												<div class="am-form-group am-form-file">
+													<button type="button"
+														class="am-btn am-btn-success am-btn-xs am-center"
+														disabled="disabled">
+														<i class="am-icon-info-circle"></i> 已经上传
+													</button>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<%}%>
+								<li>
+									<div class="am-thumbnail">
+										<div
+											class="app-product-image-preview am-text-center am-text-warning">
+											暂无图片</div>
+										<ul class="am-thumbnail-caption am-avg-sm-3">
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left">
+													<span class="am-icon-chevron-left"></span>
+												</button></li>
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete"
+													disabled="disabled">
+													<span class="am-icon-trash"></span>
+												</button></li>
+											<li><button type="button"
+													class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right">
+													<span class="am-icon-chevron-right"></span>
+												</button></li>
+										</ul>
+										<hr data-am-widget="divider"
+											class="am-divider am-divider-dashed am-margin-0" />
+										<ul class="am-thumbnail-caption am-avg-sm-1">
+											<li>
+												<div class="am-form-group am-form-file">
+													<%if (systemConfig.allowedUploadImageExtension != ""){%>
+													<button type="button"
+														class="am-btn am-btn-default am-btn-xs am-center">
+														<i class="am-icon-cloud-upload"></i> 上传图片
+													</button>
+													<input class="doc-form-file" name="adverImages" type="file">
+													<%}else{%>
+													<button type="button"
+														class="am-btn am-btn-danger am-btn-xs am-center"
+														disabled="disabled">
+														<i class="am-icon-warning"></i> 不允许上传
+													</button>
+													<%}%>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+
+							<div class="am-alert am-alert-warning am-text-xs">
+								<span class="am-icon-warning"> </span> <%if
+								(systemConfig.allowedUploadImageExtension != ""){%> <%if
+								((systemConfig.uploadLimit != 0) && (systemConfig.uploadLimit <
+								1024)){%> 小于${systemConfig.uploadLimit}KB <%}else if
+								(systemConfig.uploadLimit >= 1024){%>
+								小于${systemConfig.uploadLimit / 1024}MB <%}%> <%for(list in
+								strutil.split(systemConfig.allowedUploadImageExtension,@com.yanxin.common.SystemConfig.EXTENSION_SEPARATOR)){%>
+								<%if (listLP.last){%> *.${list}; <%}else{%> *.${list} <%}%>
+								<%}%> <%}else{%> 系统设置不允许上传图片文件! <%}%>
+							</div>
+
+						</div>
+						<div class="am-margin">
+							<button type="submit" class="am-btn am-btn-primary">
+								<span class="am-icon-save"> 保 存</span>
+							</button>
+							<button type="button" class="am-btn am-btn-default"
+								onclick="window.history.back(); return false;">
+								<span class="am-icon-undo"> 返 回</span>
+							</button>
+						</div>
+			</form>
+		</div>
+	</div>
+	<!-- content end -->
+
+	<script>
+		$().ready(
+						function() {
+
+							// 商品图片左移
+							$(".opr-img-left")
+									.livequery(
+											"click",
+											function() {
+												var $productImageLi = $(this)
+														.parent().parent()
+														.parent().parent();
+												var $productImagePrevLi = $productImageLi
+														.prev("li");
+												if ($productImagePrevLi.length > 0) {
+													$productImagePrevLi
+															.insertAfter($productImageLi);
+												}
+											});
+
+							// 商品图片右移
+							$(".opr-img-right")
+									.livequery(
+											"click",
+											function() {
+												var $productImageLi = $(this)
+														.parent().parent()
+														.parent().parent();
+												var $productImageNextLi = $productImageLi
+														.next("li");
+												if ($productImageNextLi.length > 0) {
+													$productImageNextLi
+															.insertBefore($productImageLi);
+												}
+											});
+
+							// 商品图片删除
+							$(".opr-img-delete").livequery(
+									"click",
+									function() {
+										var $productImageLi = $(this).parent()
+												.parent().parent().parent();
+										$productImageLi.remove();
+									});
+
+							// 添加图片
+							var productImageLiHtmlTemp = '<li><div class="am-thumbnail">'
+									+ '<div class="app-product-image-preview am-text-center am-text-warning">暂无图片</div>'
+									+ '<ul class="am-thumbnail-caption am-avg-sm-3">'
+									+ '<li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left"><span class="am-icon-chevron-left"></span></button></li>'
+									+ '<li><button type="button" class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete" disabled="disabled"><span class="am-icon-trash"></span></button></li>'
+									+ '<li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right"><span class="am-icon-chevron-right"></span></button></li>'
+									+ '</ul><hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" /><ul class="am-thumbnail-caption am-avg-sm-1">'
+									+ '<li><div class="am-form-group am-form-file"><button type="button" class="am-btn am-btn-default am-btn-xs am-center"><i class="am-icon-cloud-upload"></i> 上传图片</button><input class="doc-form-file" name="adverImages" type="file"></div></li>';
+							+'</ul></div></li>';
+
+							var index = 0;
+							$("input.doc-form-file")
+									.livequery(
+											'change',
+											function() {
+												var $this = $(this);
+												var $productImageLi = $this
+														.parent().parent()
+														.parent().parent();
+												var $productImagePreview = $productImageLi
+														.find(".app-product-image-preview");
+												var $productImageDeteleBtn = $productImageLi
+														.find(".opr-img-delete");
+												var fileName = $this
+														.val()
+														.substr(
+																$this
+																		.val()
+																		.lastIndexOf(
+																				"\\") + 1);
+												if (/(<%for(list in strutil.split(systemConfig.allowedUploadImageExtension,@com.yanxin.common.SystemConfig.EXTENSION_SEPARATOR)){%><%if (!listLP.last){%>.${list}|<%}else{%>.${list}<%}%><%}%>)$/i
+														.test($this.val()) == false) {
+													$.message("您选择的文件格式错误！");
+													return false;
+												}
+												$productImagePreview
+														.html('<img src="'
+																+ window.URL
+																		.createObjectURL($this[0].files[0])
+																+ '" class="am-img-bdrs"><input type="hidden" name="productImageParameterTypes" value="productImageFile" />');
+												if ($productImageDeteleBtn
+														.attr('disabled')) {
+													index++;
+													$productImageDeteleBtn
+															.attr('disabled',
+																	false);
+													var productImageLiHtml = productImageLiHtmlTemp;
+													productImageLiHtml = productImageLiHtml
+															.replace(
+																	"adverImages",
+																	"adverImages");
+													$('#file-list').append(
+															productImageLiHtml);
+												}
+											});
+
+							$('#doc-my-tabs').find('a').on(
+									'opened.tabs.amui',
+									function(e) {
+										$('div.am-tab-panel').removeAttr(
+												"style");
+									})
+						});
+		
+		
+		function showSelectValue(){
+	        var selectvalue=document.myForm.type.value;  
+	        if(selectvalue=='1'){
+	        	document.getElementById('adverAddress').style.display = "block";
+	        	document.getElementById('goodId').style.display = "none";
+	        }else{
+	        	document.getElementById('goodId').style.display = "block";
+	        	document.getElementById('adverAddress').style.display = "none";
+	        }
+	       
+	   }
+		
+		
+
+		  //下拉选择商品
+		  function test(keyword,event){
+			
+			//定义全局变量
+			var keyword = $("#goodName").val();
+			
+			var shopId = $("#shopId").val();
+			var sel = document.getElementById("sel");
+			
+			$.ajax({ 
+				type: "post", 
+				data:{'goodName':keyword,'shopId':shopId}, 
+				url: "/advertisement/product/list", 
+				success: function(data) {
+					
+					document.getElementById("sel").innerHTML="";
+					
+					for(var i=0;i<data.length;i++){//循环每一个满足条件的记录
+						//将当前循环满足条件的商品名称生成一个下拉的选项
+						sel.options[i]=new Option(data[i].name,data[i].id);
+					}
+					//判断是否有满足条件的商品
+					if(data.length>0){
+						sel.style.display='block';
+					}else{
+						sel.style.display='none';
+					}
+					//当用户按下上下键时获取相应的值
+					if(event.keyCode==40){
+						sel.focus();
+					}	
+				} 
+				});
+		}
+		 
+		 function test2(){
+			//输入回车，获取输入框内容焦点
+			$("#sel").keypress(function(){
+					$("#goodName").focus();
+					$("#sel").css("display","none");
+			});
+			 //双击，获取输入框内容焦点
+			 $("#sel").dblclick(function(){
+				 $("#goodName").focus();
+				 $("#sel").css("display","none");
+			 });
+			 //将选中的下拉列表中的内容添加到输入框中
+			$("#goodName").val($("#sel option:selected").html());
+			$("#productId").val($("#sel option:selected").val());
+			
+		}
+	</script>
+</body>
+</html>
+
+

@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<% include("admin_head.html",{title: '订单详情', loadListJS: true}){}%>
+</head>
+<body>
+  <div class="admin-content">
+  <div class="am-u-sm-12 am-u-md-4 am-padding-right-0">
+          <div class="am-input-group am-input-group-sm">
+          <form class="am-form" id="listForm" action="/order/list" method="post">
+          <input type="hidden" name="keyword" />
+          <input type="hidden" name="startDate" />
+          <input type="hidden" name="endDate" />
+            <span class="am-input-group-btn">
+              <button id="searchButton" class="am-btn am-btn-default" type="button">返回</button>
+            </span>
+            </form>
+          </div>
+        </div>
+    <div class="admin-content-body">
+      <article class="page-container">
+		<table class="table" style="position: relative;left:13px">
+			<tbody>
+				<tr>
+					<td class="text-r" width="80">订单编号：</td>
+					<td style="color: #867777">${order.orderNum}</td>
+					<td class="text-r">订单来源：</td>
+					<td style="color: #867777"><%if (order.orderResource == 'APP'){%> APP <%}%>
+              <%if (order.orderResource == 'YOUZAN'){%> 有赞 <%}%></td>
+				</tr>
+				<tr>
+				<td class="text-r" width="80">订单金额：</td>
+				<td style="color: #867777">${order.orderAmount}</td>
+				<td class="text-r">订单状态：</td>
+				<td style="color: #867777"><%if (order.status == '0'){%> 下单 <%}%>
+	              <%if (order.status == '1'){%> 已经支付 <%}%>
+	              <%if (order.status == '2'){%> 分拣中 <%}%>
+	              <%if (order.status == '3'){%> 分拣完成 <%}%>
+	              <%if (order.status == '4'){%> 配送中 <%}%>
+	              <%if (order.status == '5'){%> 配送完成 <%}%>
+	              <%if (order.status == '6'){%> 待退款 <%}%>
+	              <%if (order.status == '7'){%> 已退款 <%}%>
+	              <%if (order.status == '8'){%> 已取消 <%}%></td>
+				</tr>
+				<tr>
+					<td class="text-r">支付方式：</td>
+					<td style="color: #867777"><%if (order.payType == 'wx'){%> 微信支付 <%}%>
+              <%if (order.payType == 'zfb'){%> 支付宝支付 <%}%></td>
+					<td class="text-r">下单时间：</td>
+					<td style="color: #867777">${order.orderTime,dateFormat="yyyy-MM-dd HH:mm:ss"}</td>
+				</tr>
+				<tr>
+					<td class="text-r">分拣人：</td>
+					<td style="color: #867777">${sorting.sortingName!}</td>
+					<td class="text-r">分拣人电话：</td>
+					<td style="color: #867777">${sorting.sortingPhone!}</td>
+				</tr>
+				<tr>
+					<td class="text-r">配送人：</td>
+					<td style="color: #867777">${distribution.distributionName!}</td>
+					<td class="text-r">配送人电话：</td>
+					<td style="color: #867777">${distribution.distributionPhone!}</td>
+				</tr>
+				<tr>
+					<td class="text-r">取货方式：</td>
+					<td style="color: #867777"><%if (order.extractionType == '自取'){%> 自取 <%}%>
+              <%if (order.extractionType == '配送'){%> 配送 <%}%>
+              <%if (order.extractionType == null){%> 配送 <%}%></td>
+					<td class="text-r">客户地址：</td>
+					<td style="color: #867777">${order.address.area!}${order.address.address!}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="am-scrollable-horizontal">
+        <table class="am-table am-table-striped am-table-hover table-main am-text-nowrap am-margin-bottom-0">
+          <thead>
+            <tr>
+             <th>商品图片</th>
+             <th>商品编码</th>
+             <th>商品名称</th>
+             <th>商品条码</th>
+			 <th>商品数量</th>
+			 <th>商品价格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%for(list in order.productDetails){%>
+            <tr id="listTr${listLP.index}">
+              <td><img class="picture-thumb" src="${list.productUrl}" width="50" height="50"></td>
+              <td>${list.productCode}</td>
+              <td>${list.productName}</td>
+              <td>${list.barCode}</td>
+              <td>${list.productNum}</td>
+              <td>${list.price}</td>
+            </tr>
+            <%}%>
+          </tbody>
+        </table>
+      </div>
+	</article>
+    </div>
+  </div>
+  
+  <script>
+	</script>
+</body>
+</html>

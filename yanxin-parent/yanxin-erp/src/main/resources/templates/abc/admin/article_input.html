@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<% include("admin_head.html",{title: '添加/编辑文章', validatorJS: true, loadUE: true}){}%>
+<%var isAdd = false;
+  var isEdit = false;
+  if(isEmpty(article.id)){
+    isAdd = true;
+  }else{
+  isEdit = true;
+  }%>
+</head>
+<body>
+<!-- content start -->
+<div class="admin-content">
+  <div class="admin-content-body">
+    <div class="am-cf app-padding-title">
+      <div class="am-fl am-cf">
+        <strong class="am-text-primary am-text-lg">内容管理</strong> / <small><%if(isAdd){%>添加文章<%}else{%>编辑文章<%}%></small>
+      </div>
+    </div>
+  
+    <hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" />
+    
+    <form class="validator-form" action="<%if (isAdd){%>/article/save<%}else{%>/article/update<%}%>" method="post">
+    <input type="hidden" name="article.shop" value="${shopId!}" />
+    <input type="hidden" name="article.id" value="${article.id!}" />
+    <div class="am-form am-margin am-form-horizontal">
+      <div class="am-form-group am-form-group-sm">
+        <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">文章标题</label>
+        <div class="am-u-sm-8 am-u-md-9">
+          <input type="text" class="am-form-field" name="article.title" value="${article.title!}" required />
+          <div class="am-text-warning am-margin-top-xs am-text-xs">${titleMessages!}</div>
+        </div>
+      </div>
+      <div class="am-form-group am-form-group-sm">
+        <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">是否置顶</label>
+        <div class="am-u-sm-8 am-u-md-9">
+          <label class="am-radio-inline">
+            <input type="radio" name="article.isTop" value="true"<%if (article.isTop! == true){%> checked<%}%> required> 是
+          </label>
+          <label class="am-radio-inline">
+            <input type="radio" name="article.isTop" value="false"<%if (isAdd || article.isTop! == false){%> checked<%}%>> 否
+          </label>
+           <div class="am-text-warning am-margin-top-xs am-text-xs">${isTopMessages!}</div>
+        </div>
+      </div>
+      <div class="am-form-group am-form-group-sm">
+        <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">是否发布</label>
+        <div class="am-u-sm-8 am-u-md-9">
+          <label class="am-radio-inline">
+            <input type="radio" name="article.isPublication" value="true"<%if (isAdd || article.isPublication! == true){%> checked<%}%> required> 是
+          </label>
+          <label class="am-radio-inline">
+            <input type="radio" name="article.isPublication" value="false"<%if (article.isPublication! == false){%> checked<%}%>> 否
+          </label>
+           <div class="am-text-warning am-margin-top-xs am-text-xs">${isPublicationMessages!}</div>
+        </div>
+      </div>
+      <div class="am-form-group am-form-group-sm">
+        <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">内容</label>
+        <div class="am-u-sm-8 am-u-md-9">
+          <textarea class="am-validate" name="article.content" id="editor" required>${article.content!}</textarea>
+          <div class="am-text-warning am-margin-top-xs am-text-xs">${contentMessages!}</div>
+        </div>
+      </div>
+      <hr data-am-widget="divider" class="am-divider am-divider-dashed" />
+      <div class="am-form-group am-form-group-sm">
+        <div class="am-u-sm-8 am-u-sm-offset-4 am-u-md-9 am-u-md-offset-3">
+          <button type="submit" class="am-btn am-btn-primary"><span class="am-icon-save">  保  存</span></button>
+          <button type="button" class="am-btn am-btn-default" onclick="window.history.back(); return false;"><span class="am-icon-undo">  返  回</span></button>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

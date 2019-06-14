@@ -1,0 +1,66 @@
+foo: sfsaff
+server:
+    port: 41202
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://47.105.86.63:41201/eureka/
+
+    instance:
+      lease-renewal-interval-in-seconds: 48
+      lease-expiration-duration-in-seconds: 28
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+      hostname: ${spring.cloud.client.ipAddress}
+      #注册时使用ip而不是主机名
+      prefer-ip-address: true
+      #如果是swagger 文档，直接写http://${spring.cloud.client.ipAddress}:${server.port}/swagger-ui.html
+      status-page-url: http://${spring.cloud.client.ipAddress}:${server.port}/
+      health-check-url: http://${spring.cloud.client.ipAddress}:${server.port}/
+
+upload:
+  filePath: /home/tomcat/uploadfile #（上传文件的路径）
+  returnurl: http://39.107.24.27:6760/ #（返回的http前缀）
+
+spring:
+    zipkin:
+      base-url: http://39.107.24.27:41202
+    # 如果是测试环境则dev_model=true 不做验证码校验
+    dev_model: true
+    jackson:
+      time-zone: GMT+8
+      date-format: yyyy-MM-dd HH:mm:ss
+
+    session:
+      store-type: redis
+
+    datasource:
+      readSize: 1
+        # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource
+      write:
+        url: jdbc:mysql://47.105.86.63:3306/yanxin?characterEncoding=utf-8
+        username: yanxin
+        password: '*LuYanxin2018*'
+        driver-class-name: com.mysql.jdbc.Driver
+        validationQuery: select 'x'
+
+      read:
+        url: jdbc:mysql://47.105.86.63:3306/yanxin?characterEncoding=utf-8
+        username: yanxin
+        password: '*LuYanxin2018*'
+        driver-class-name: com.mysql.jdbc.Driver
+        validationQuery: select 'x'
+        
+    redis:
+        database: 0
+        host: 47.105.86.63
+        port: 1314
+        password: '@LuluYanxin2018@'
+        pool:
+          max-active: 8
+          max-idle: 8
+          max-wait: -1
+          min-idle: 0
+logging:
+    config: classpath:logback.xml

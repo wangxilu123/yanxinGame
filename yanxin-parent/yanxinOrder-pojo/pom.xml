@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yanxin</groupId>
+    <artifactId>yanxin-parent</artifactId>
+    <version>1.0</version>
+  </parent>
+  <artifactId>yanxinOrder-pojo</artifactId>
+  <name>yanxinOrder-pojo</name>
+  <dependencies>
+        <dependency>
+			<groupId>com.yanxin</groupId>
+			<artifactId>yanxinUser-pojo</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.yanxin</groupId>
+			<artifactId>yanxinErp-pojo</artifactId>
+			<version>1.0</version>
+		</dependency>	
+	
+	   <dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-core</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yanxin</groupId>
+			<artifactId>yanxin-mybites</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.alipay.sdk</groupId> 
+		    <artifactId>alipay-sdk-java</artifactId>
+		    <version>3.1.0</version>
+        </dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		
+	</dependencies>
+</project>

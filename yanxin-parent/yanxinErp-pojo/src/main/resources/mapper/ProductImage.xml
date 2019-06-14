@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanxin.dao.ProductImageMapper">
+  <resultMap id="BaseResultMap" type="com.yanxin.domain.ProductImage">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="is_del" jdbcType="BIT" property="isDel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, url, is_del
+  </sql>
+  <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from product_image
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="delete" parameterType="java.lang.Long">
+    delete from product_image
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.yanxin.domain.ProductImage">
+  <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">  
+        SELECT LAST_INSERT_ID()  
+    </selectKey>  
+    insert into product_image (id, name, url, is_del)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=BIT})
+  </insert>
+ 
+  <update id="update" parameterType="com.yanxin.domain.ProductImage">
+    update product_image
+    <set>
+      <if test="name != null">
+        title = #{name,jdbcType=VARCHAR},
+      </if>
+     
+      <if test="url != null">
+        source = #{url,jdbcType=VARCHAR},
+      </if>
+      
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+</mapper>

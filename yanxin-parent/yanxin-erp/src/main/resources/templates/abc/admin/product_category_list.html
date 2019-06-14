@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<% include("admin_head.html",{title:'商品分类列表'}){}%>
+</head>
+<body>
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf app-padding-title">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">商品管理</strong> / <small>商品分类列表</small></div>
+      </div>
+      
+      <hr data-am-widget="divider" class="am-divider am-divider-dotted am-margin-0" />
+      
+      <form class="am-form">
+      <div class="am-g app-padding-toolbar">
+        <div class="am-u-sm-12 am-u-md-12">
+          <div class="am-btn-toolbar app-padding-toolbar-item">
+            <div class="am-btn-group am-btn-group-sm">
+              <button type="button" class="am-btn am-btn-default" onclick="location.href='/productCategory/add?productCategory.shop=${admin.shopId!}';"><span class="am-icon-plus"></span> 新增</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" />
+      
+      <div class="am-scrollable-horizontal">
+        <table class="am-table am-table-striped am-table-hover table-main am-text-nowrap">
+          <thead>
+            <tr>
+              <th>分类名称</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%for(list in productCategoryTreeList){%>
+         	<tr grade="${list.grade!}">
+              <td class="categoryName">
+    			<span style="margin-left: ${list.grade * 20}px;">
+    		      <%if (list.grade == 0){%>
+    		      <i class="am-icon-folder-open-o"></i>
+    			  <%}else if((list.grade == 1) && (list.parentId != null) && (list.twoParentId == null)){%>
+    			  <i class="am-icon-folder-open-o"></i>
+    			  <%}else{%>
+    			  <i class="am-icon-folder-o"></i>
+    			  <%}%>
+    			  ${list.name}
+    			</span>
+    	      </td>
+              <td>
+                <div class="am-btn-toolbar">
+                  <div class="am-btn-group am-btn-group-xs">   
+    			    <%if (list.childCategory.~size > 0){%>
+    				<button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" disabled="disabled"><span class="am-icon-trash-o"></span> 删除</button>
+    				<%}else{%>
+    				<button id="deleteAction" type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" onclick="deleteCategory('${list.id}')"><span class="am-icon-trash-o"></span> 删除</button>
+    				<%}%>
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="location.href='/productCategory/edit?id=${list.id}'"><span class="am-icon-pencil-square-o"></span>编辑</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <%for(child in list.childCategory!){%>
+           <tr grade="${child.grade!}">
+              <td class="categoryName">
+    			<span style="margin-left: ${child.grade * 20}px;">
+    		      <%if (child.grade == 0){%>
+    		      <i class="am-icon-folder-open-o"></i>
+    			  <%}else if((child.grade == 1) && (child.parentId != null) && (child.twoParentId == null)){%>
+    			  <i class="am-icon-folder-open-o"></i>
+    			  <%}else{%>
+    			  <i class="am-icon-folder-o"></i>
+    			  <%}%>
+    			  ${child.name}
+    			</span>
+    	      </td>
+              <td>
+                <div class="am-btn-toolbar">
+                  <div class="am-btn-group am-btn-group-xs">   
+    			    <%if (child.childCategory.~size > 0){%>
+    				<button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" disabled="disabled"><span class="am-icon-trash-o"></span> 删除</button>
+    				<%}else{%>
+    				<button id="deleteAction" type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" onclick="deleteCategory('${child.id}')"><span class="am-icon-trash-o"></span> 删除</button>
+    				<%}%>
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="location.href='/productCategory/edit?id=${child.id}'"><span class="am-icon-pencil-square-o"></span>编辑</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <%for(childTwo in child.childCategory!){%>
+           <tr grade="${childTwo.grade!}">
+              <td class="categoryName">
+    			<span style="margin-left: ${childTwo.grade * 20}px;">
+    		      <%if (childTwo.grade == 0){%>
+    		      <i class="am-icon-folder-open-o"></i>
+    			  <%}else if((childTwo.grade == 1) && (childTwo.parentId != null) && (childTwo.twoParentId == null)){%>
+    			  <i class="am-icon-folder-open-o"></i>
+    			  <%}else{%>
+    			  <i class="am-icon-folder-o"></i>
+    			  <%}%>
+    			  ${childTwo.name}
+    			</span>
+    	      </td>
+              <td>
+                <div class="am-btn-toolbar">
+                  <div class="am-btn-group am-btn-group-xs">   
+    				<button id="deleteAction" type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" onclick="deleteCategory('${childTwo.id}')"><span class="am-icon-trash-o"></span> 删除</button>
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="location.href='/productCategory/edit?id=${childTwo.id}'"><span class="am-icon-pencil-square-o"></span>编辑</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <%}%>
+            <%}%>
+            <%}%>
+          </tbody>
+        </table>
+        <!-- 分页 -->
+  	    <%if (productCategoryTreeList.~size == 0){%>
+		<h3 class="am-kai am-text-center am-margin-xs">没有找到任何记录!</h3>
+	    <%}%>
+      </div>
+      </form>
+    </div>
+  </div>
+  <!-- content end -->
+<script>
+//删除
+function deleteCategory(ids) {
+  Modal.confirm("您确定要删除吗？",{
+    relatedTarget: this,
+    onConfirm: function(options) {
+      $.ajax({
+        method:"post",  
+        url: '/productCategory/delete',
+        data:"id=" + ids + "",
+        dataType: "json",
+        async: false,
+        success: function(data) {
+          Modal.alert(data.message);
+          if (data.status == "success") {
+            location.href='/admin/productCategory';
+          }             
+        }
+      });
+    }
+  });
+}  
+
+$().ready(function() {
+  // 树折叠
+  $(".categoryName").click( function() {
+    var grade = $(this).parent().attr("grade");
+    var isHide;
+    $(this).parent().nextAll("tr").each(function(){
+      var thisgrade = $(this).attr("grade");
+      if(thisgrade <=  grade) {
+        return false;
+      }
+      if(isHide == null) {
+        if($(this).is(":hidden")){
+          isHide = true;
+        } else {
+          isHide = false;
+        }
+      }
+      if( isHide) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+    });
+  })
+</script>
+</body>
+</html>

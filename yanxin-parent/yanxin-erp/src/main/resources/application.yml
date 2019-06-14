@@ -1,0 +1,52 @@
+server:
+    port: 8076
+beetlsql:
+  enabled: false
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://192.168.2.7:41201/eureka/
+
+    instance:
+      lease-renewal-interval-in-seconds: 48
+      lease-expiration-duration-in-seconds: 28
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+      hostname: ${spring.cloud.client.ipAddress}
+      #注册时使用ip而不是主机名
+      prefer-ip-address: true
+      #如果是swagger 文档，直接写http://${spring.cloud.client.ipAddress}:${server.port}/swagger-ui.html
+      status-page-url: http://${spring.cloud.client.ipAddress}:${server.port}/
+      health-check-url: http://${spring.cloud.client.ipAddress}:${server.port}/    
+  
+spring:
+    #thymeleaf
+    thymeleaf:
+      mode: LEGACYHTML5
+    #AOP
+    aop:
+      auto: true
+      proxy-target-class: true
+    # 如果是测试环境则dev_model=true 不做验证码校验
+    dev_model: false
+      
+    datasource:
+      readSize: 1
+        # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource
+      write:
+        url: jdbc:mysql://192.168.2.7:3306/yanxin?characterEncoding=utf-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        validationQuery: select 'x'
+
+      read:
+        url: jdbc:mysql://192.168.2.7:3306/yanxin?characterEncoding=utf-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        validationQuery: select 'x'
+logging:
+    config: classpath:logback.xml
+    

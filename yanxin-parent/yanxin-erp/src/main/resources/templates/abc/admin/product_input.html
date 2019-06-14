@@ -1,0 +1,562 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<% include("admin_head.html",{title: '添加/编辑商品', loadUE: true, validatorJS: true, livequeryJS: true}){}%>
+<%
+var isAdd = false;
+var isEdit = false;
+if(isEmpty(product.id)){
+  isAdd = true;
+}else{
+  isEdit = true;
+  
+  var productId = 0;
+  var productGrade = 3;
+if(product.productCategoryThirdId!=null){
+productId = product.productCategoryThirdId;
+productGrade = 2;
+}else if(product.productCategoryTwoId!=null){
+productId = product.productCategoryTwoId;
+productGrade = 1;
+}else{
+productId = product.productCategoryId;
+productGrade = 0;
+}
+
+var haixinGoodId = 0;
+
+
+}
+var productCategoryTreeList = productCategoryTreeList;
+%>
+
+<style type="text/css">
+css1{
+		display: nono;
+	}
+	css2{
+		display: block;
+	}
+</style>
+
+</head>
+<body>
+<!-- content start -->
+<div class="admin-content">
+  <div class="admin-content-body">
+    <div class="am-cf app-padding-title">
+      <div class="am-fl am-cf">
+        <strong class="am-text-primary am-text-lg">商品管理</strong> / <small><%if(isAdd){%>添加商品<%}else{%>编辑商品<%}%></small>
+      </div>
+    </div>
+
+    <hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" />
+    
+    <form class="validator-form" action="<%if (isAdd){%>/product/save<%}else{%>/product/update<%}%>" enctype="multipart/form-data" method="post" name="myForm">
+    <input type="hidden" id="productId" name="product.id" value="${product.id!}" />
+    <input type="hidden" name="product.shop" value="${shopId!}" />
+    <div class="am-tabs am-margin" data-am-tabs="{noSwipe: 1}" id="doc-my-tabs">
+      <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab1">基本信息</a></li>
+        <li><a href="#tab2">商品图片</a></li>
+        <li><a href="#tab3">商品描述</a></li>
+      </ul>
+
+      <div class="am-tabs-bd am-form am-tabs-bd-ofv">
+        <div class="am-tab-panel am-fade am-in am-active am-form-horizontal" id="tab1">
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">商品名称</label>
+            <div class="am-u-sm-8 am-u-md-9">
+            <input type="text" class="am-form-field"  id="goodName" name="goodName" value="${product.name!}" onkeyup="test(this.value,event)" required><br/>
+			<select multiple="multiple" id="sel" onchange="test2()"
+				style="width:300px;display:none">
+			</select>
+			</div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">商品副标题</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" class="am-form-field" id="fullName" name="fullName" value="${product.fullName!}"/>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">商品编号</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" class="am-form-field" id="goodCode" name="goodCode" value="${product.goodCode!}" required/>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">原产地</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" class="am-form-field" name="product.originPlace" value="${product.originPlace!}"/>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">品牌</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" class="am-form-field" name="brandName" value="${product.brandName!}"/>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">储藏条件</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" class="am-form-field" name="storageCondition" value="${product.storageCondition!}"/>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">商品分类</label>
+            <div class="am-u-sm-8 am-u-md-9">
+          <%if(isAdd){%>
+          <select id="firstCategory" name="parentId" data-am-selected="{btnWidth: '30%', maxHeight: '200px', btnSize: 'sm', btnStyle: 'secondary'}">
+            <option value="0" selected>请选择...</option>
+            <%for(list in productCategoryTreeList){%>
+            <option value="${list.id}">
+			  ${list.name}
+			</option>
+			
+		
+            <%}%>
+          </select>
+          <select id="secondCategory" name="parentSecondId" data-am-selected="{btnWidth: '35%', maxHeight: '200px', btnSize: 'sm', btnStyle: 'secondary'}">
+          </select>
+          <select id="thirdCategory" name="parentThirdId" data-am-selected="{btnWidth: '30%', maxHeight: '200px', btnSize: 'sm', btnStyle: 'secondary'}">
+          </select>
+          <%}else{%>
+          <select id="firstCategoryUpdate" name="parentId" data-am-selected="{btnWidth: '30%', btnSize: 'sm'}">
+           <%for(list in productCategoryTreeList){%>
+            <option value="${list.id}" <%if (product.productCategoryId! == list.id!){%>selected="selected" <%}%>>${list.name!}</option>
+            <%}%>
+           
+		</select>
+		 <select id="secondCategoryUpdate" name="parentSecondId" data-am-selected="{btnWidth: '35%', maxHeight: '200px', btnSize: 'sm', btnStyle: 'secondary'}">
+          </select>
+          <select id="thirdCategoryUpdate" name="parentThirdId" data-am-selected="{btnWidth: '30%', maxHeight: '200px', btnSize: 'sm', btnStyle: 'secondary'}">
+          </select>
+          <%}%>
+        </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">本店原价</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="number" class="am-form-field" name="originalPrice" value="${product.originalPrice!0}" min="0" step="0.01" required  onkeyup="showSelectValue(this)"/>
+            </div>
+          </div>
+          
+          <div id="startTime" class="am-form-group am-form-group-sm"  style="display:none;">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">限时优惠开始时间</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" name="startTime" class="am-form-field" placeholder="限时优惠开始时间" value="${product.newstartTime!}" data-am-datepicker  />
+            </div>
+          </div>
+          <div id="endTime" class="am-form-group am-form-group-sm"  style="display:none;">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">限时优惠结束时间</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="text" name="endTime" class="am-form-field" placeholder="限时优惠结束时间" value="${product.newendTime!}" data-am-datepicker  />
+            </div>
+          </div>
+          
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">本店现价</label>
+            <div class="am-u-sm-8 am-u-md-9">
+              <input type="number" class="am-form-field" name="product.price" value="${product.price!0}" min="0"  step="0.01" required />
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">商品重量</label>
+            <div class="am-u-sm-5 am-u-md-7">
+              <input type="number" class="am-form-field" name="weight" value="${product.weight!0}" min="0" step="0.1" placeholder="商品重量"  />
+            </div>
+            <div class="am-u-sm-3 am-u-md-2">kg
+            </div>
+          </div>
+          
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">保质期</label>
+            <div class="am-u-sm-5 am-u-md-7">
+              <input type="number" class="am-form-field" name="product.warrantyPeriod" value="${product.warrantyPeriod!0}" placeholder="保质期"  />
+            </div>
+            <div class="am-u-sm-3 am-u-md-2">
+              <select name="warrantDays" data-am-selected="{btnWidth: '100%', maxHeight: '200px', btnSize: 'sm'}"> 
+              	<option value="月">月</option>
+              	<option value="天" selected>日</option>
+              </select>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">是否上架</label>
+            <div class="am-u-sm-8 am-u-md-9 am-btn-group" data-am-button>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="product.isMarketable" value="true"<%if (isAdd || product.isMarketable == true){%> checked<%}%> required> 是
+                </label>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="product.isMarketable" value="false"<%if (product.isMarketable! == false){%> checked<%}%>> 否
+                </label>
+            </div>
+          </div>
+          <div class="am-form-group am-form-group-sm">
+            <label class="am-u-sm-4 am-u-md-3 am-text-right am-form-label">是否精品</label>
+            <div class="am-u-sm-8 am-u-md-9 am-btn-group" data-am-button>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="product.isTop" value="false"<%if (isAdd || product.isTop == false){%> checked<%}%> required> 否
+                </label>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="product.isTop" value="true"<%if (product.isTop! == true){%> checked<%}%>> 是
+                </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="am-tab-panel am-fade app-min-height app-product-image" id="tab2">
+          <ul class="am-avg-sm-2 am-avg-md-4 am-thumbnails" id="file-list">
+            <%for(list in product.productImageList!){%>
+            <li>
+              <div class="am-thumbnail">
+                <input type="hidden" name="productImageIds" value="${list.id}" />
+                <input type="hidden" name="productImageParameterTypes" value="productImageId" />
+                <img src="${list.url}" class="am-img-bdrs">
+                <ul class="am-thumbnail-caption am-avg-sm-3">
+                  <li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left"><span class="am-icon-chevron-left"></span></button></li>
+                  <li><button type="button" class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete"><span class="am-icon-trash"></span></button></li>
+                  <li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right"><span class="am-icon-chevron-right"></span></button></li>
+                </ul>
+                <hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" />
+                <ul class="am-thumbnail-caption am-avg-sm-1">
+                  <li>
+                    <div class="am-form-group am-form-file">
+                      <button type="button" class="am-btn am-btn-success am-btn-xs am-center" disabled="disabled">
+                        <i class="am-icon-info-circle"></i> 已经上传
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <%}%>
+            <li>
+              <div class="am-thumbnail">
+                <div class="app-product-image-preview am-text-center am-text-warning">
+                  暂无图片
+                </div>
+                <ul class="am-thumbnail-caption am-avg-sm-3">
+                  <li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left"><span class="am-icon-chevron-left"></span></button></li>
+                  <li><button type="button" class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete" disabled="disabled"><span class="am-icon-trash"></span></button></li>
+                  <li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right"><span class="am-icon-chevron-right"></span></button></li>
+                </ul>
+                <hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" />
+                <ul class="am-thumbnail-caption am-avg-sm-1">
+                  <li>
+                    <div class="am-form-group am-form-file">
+                      <%if (systemConfig.allowedUploadImageExtension != ""){%>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-center">
+                        <i class="am-icon-cloud-upload"></i> 上传图片
+                      </button>
+                      <input class="doc-form-file" name="productImages" type="file">
+                      <%}else{%>
+                      <button type="button" class="am-btn am-btn-danger am-btn-xs am-center" disabled="disabled">
+                        <i class="am-icon-warning"></i> 不允许上传
+                      </button>
+                      <%}%>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+            
+          <div class="am-alert am-alert-warning am-text-xs">
+            <span class="am-icon-warning"> </span>
+            <%if (systemConfig.allowedUploadImageExtension != ""){%>
+            <%if ((systemConfig.uploadLimit != 0) && (systemConfig.uploadLimit < 1024)){%>
+            小于${systemConfig.uploadLimit}KB
+            <%}else if (systemConfig.uploadLimit >= 1024){%>
+            小于${systemConfig.uploadLimit / 1024}MB
+            <%}%> 
+            <%for(list in strutil.split(systemConfig.allowedUploadImageExtension,@com.yanxin.common.SystemConfig.EXTENSION_SEPARATOR)){%>
+            <%if (listLP.last){%>
+            *.${list};
+            <%}else{%>
+            *.${list}
+            <%}%>
+            <%}%>
+            <%}else{%>
+            系统设置不允许上传图片文件!
+            <%}%>
+          </div>
+        </div>
+        
+        <div class="am-tab-panel am-fade" id="tab3">
+          <div class="am-form-group am-form-group-sm">
+            <script id="editor" name="product.introduction" type="text/plain">
+              ${product.introduction!}
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="am-margin">
+      <button type="submit" class="am-btn am-btn-primary"> 保  存 </button>
+      <button type="button" class="am-btn am-btn-default" onclick="window.history.back(); return false;"> 返  回 </button>
+    </div>
+    </form>
+  </div>
+</div>
+<!-- content end -->
+<script>
+  $().ready(function() {
+	  
+	  var firtstCategoryUpdateId = $("#firstCategoryUpdate").val();
+	 
+		 var productId = $("#productId").val();
+		 $("#secondCategoryUpdate").html('')
+		 $("#thirdCategoryUpdate").html('')
+		 var product=null;
+		 if(productId!=null && productId!=''&&productId!=undefined){
+			 $.ajax({
+					type: "post", 
+					data:{'id':productId}, 
+					url: "/product/id", 
+					success: function(data) {
+						product = data;
+						
+						$.ajax({
+							type: "post", 
+							data:{'firstCategoryId':firtstCategoryUpdateId}, 
+							url: "/secondCategory/list", 
+							success: function(data) {
+								$("#secondCategoryUpdate").append("<option value='0' selected>请选择...</option>");
+								$.each(data,function(index,val){
+									if(val.id == product.productCategoryTwoId){
+										$("#secondCategoryUpdate").append("<option selected='selected' value='"+val.id+"'>"+val.name+"</option>");
+									}else{
+										$("#secondCategoryUpdate").append("<option value='"+val.id+"'>"+val.name+"</option>");
+									}
+									
+								})
+								 var secondCategoryUpdateId = $("#secondCategoryUpdate").val();
+								
+								$.ajax({
+									type: "post", 
+									data:{'secondCategoryId':secondCategoryUpdateId}, 
+									url: "/thirdCategory/list", 
+									success: function(data) {
+										$("#thirdCategoryUpdate").append("<option value='0' selected>请选择...</option>");
+										$.each(data,function(index,val){
+											if(val.id == product.productCategoryThirdId){
+												$("#thirdCategoryUpdate").append("<option selected='selected'  value='"+val.id+"'>"+val.name+"</option>");
+											}else{
+												$("#thirdCategoryUpdate").append("<option value='"+val.id+"'>"+val.name+"</option>");
+											}
+											
+										})
+										
+									} 
+									
+								})
+							} 
+							
+						})
+						
+					} 
+				})
+				
+		
+		 }
+		 
+		
+			
+    
+    // 商品图片左移
+    $(".opr-img-left").livequery("click", function() {
+        var $productImageLi = $(this).parent().parent().parent().parent();
+        var $productImagePrevLi = $productImageLi.prev("li");
+        if ($productImagePrevLi.length > 0) {
+            $productImagePrevLi.insertAfter($productImageLi);
+        }
+    });
+    
+    // 商品图片右移
+    $(".opr-img-right").livequery("click", function() {
+        var $productImageLi = $(this).parent().parent().parent().parent();
+        var $productImageNextLi = $productImageLi.next("li");
+        if ($productImageNextLi.length > 0) {
+            $productImageNextLi.insertBefore($productImageLi);
+        }
+    });
+    
+    // 商品图片删除
+    $(".opr-img-delete").livequery("click", function() {
+        var $productImageLi = $(this).parent().parent().parent().parent();
+        $productImageLi.remove();
+    });
+    
+    // 添加图片
+    var productImageLiHtmlTemp = '<li><div class="am-thumbnail">'
+        + '<div class="app-product-image-preview am-text-center am-text-warning">暂无图片</div>'
+        + '<ul class="am-thumbnail-caption am-avg-sm-3">'
+        + '<li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-left"><span class="am-icon-chevron-left"></span></button></li>'
+        + '<li><button type="button" class="am-btn am-btn-default am-text-danger am-btn-xs am-center opr-img-delete" disabled="disabled"><span class="am-icon-trash"></span></button></li>'
+        + '<li><button type="button" class="am-btn am-btn-default am-text-warning am-btn-xs am-center opr-img-right"><span class="am-icon-chevron-right"></span></button></li>'
+        + '</ul><hr data-am-widget="divider" class="am-divider am-divider-dashed am-margin-0" /><ul class="am-thumbnail-caption am-avg-sm-1">'
+        + '<li><div class="am-form-group am-form-file"><button type="button" class="am-btn am-btn-default am-btn-xs am-center"><i class="am-icon-cloud-upload"></i> 上传图片</button><input class="doc-form-file" name="productImages" type="file"></div></li>';
+        + '</ul></div></li>';
+        
+    var index = 0;
+    $("input.doc-form-file").livequery('change', function() {
+      var $this = $(this);
+      var $productImageLi = $this.parent().parent().parent().parent();
+      var $productImagePreview = $productImageLi.find(".app-product-image-preview");
+      var $productImageDeteleBtn = $productImageLi.find(".opr-img-delete");
+      var fileName = $this.val().substr($this.val().lastIndexOf("\\") + 1);
+      if (/(<%for(list in strutil.split(systemConfig.allowedUploadImageExtension,@com.yanxin.common.SystemConfig.EXTENSION_SEPARATOR)){%><%if (!listLP.last){%>.${list}|<%}else{%>.${list}<%}%><%}%>)$/i.test($this.val()) == false) {
+        $.message("您选择的文件格式错误！");
+        return false;
+      }
+      $productImagePreview.html('<img src="' + window.URL.createObjectURL($this[0].files[0]) + '" class="am-img-bdrs"><input type="hidden" name="productImageParameterTypes" value="productImageFile" />');
+      if($productImageDeteleBtn.attr('disabled')){
+          index++;
+          $productImageDeteleBtn.attr('disabled',false);
+          var productImageLiHtml = productImageLiHtmlTemp;
+          productImageLiHtml = productImageLiHtml.replace("productImages", "productImages");
+          $('#file-list').append(productImageLiHtml);
+      }
+    });
+    
+    $('#doc-my-tabs').find('a').on('opened.tabs.amui', function(e) {
+      $('div.am-tab-panel').removeAttr("style");
+    })
+  });
+  
+  
+  //下拉选择商品
+  function test(keyword,event){
+	
+	//定义全局变量
+	var keyword = $("#goodName").val();
+	var sel = document.getElementById("sel");
+	
+	$.ajax({ 
+		type: "post", 
+		data:{'goodName':keyword}, 
+		url: "/haixinGood/list", 
+		success: function(data) {
+			
+			document.getElementById("sel").innerHTML="";
+			
+			for(var i=0;i<data.length;i++){//循环每一个满足条件的记录
+				//将当前循环满足条件的商品名称生成一个下拉的选项
+				sel.options[i]=new Option(data[i].goodName,data[i].goodCode);
+			}
+			//判断是否有满足条件的商品
+			if(data.length>0){
+				sel.style.display='block';
+			}else{
+				sel.style.display='none';
+			}
+			//当用户按下上下键时获取相应的值
+			if(event.keyCode==40){
+				sel.focus();
+			}	
+		} 
+		});
+}
+ 
+ function test2(){
+	//输入回车，获取输入框内容焦点
+	$("#sel").keypress(function(){
+			$("#goodName").focus();
+			$("#sel").css("display","none");
+	});
+	 //双击，获取输入框内容焦点
+	 $("#sel").dblclick(function(){
+		 $("#goodName").focus();
+		 $("#sel").css("display","none");
+	 });
+	 //将选中的下拉列表中的内容添加到输入框中
+	$("#goodName").val($("option:selected").html());
+	$("#goodCode").val($("option:selected").val());
+	
+}
+ $("#firstCategory").change(function(){
+	 var firtstCategoryId = $("#firstCategory").val();
+	$("#secondCategory").html('')
+	$.ajax({
+		type: "post", 
+		data:{'firstCategoryId':firtstCategoryId}, 
+		url: "/secondCategory/list", 
+		success: function(data) {
+			$("#secondCategory").append("<option value='0' selected>请选择...</option>");
+			$.each(data,function(index,value){
+				$("#secondCategory").append("<option value='"+value.id+"'>"+value.name+"</option>");
+			})
+			
+		} 
+		
+	})
+ })
+ 
+ $("#firstCategoryUpdate").change(function(){
+	 var firtstCategoryId = $("#firstCategoryUpdate").val();
+	$("#secondCategoryUpdate").html('')
+	$.ajax({
+		type: "post", 
+		data:{'firstCategoryId':firtstCategoryId}, 
+		url: "/secondCategory/list", 
+		success: function(data) {
+			$("#secondCategoryUpdate").append("<option value='0' selected>请选择...</option>");
+			$.each(data,function(index,value){
+				$("#secondCategoryUpdate").append("<option value='"+value.id+"'>"+value.name+"</option>");
+			})
+			
+		} 
+		
+	})
+ })
+ 
+  $("#secondCategory").change(function(){
+	 var secondCategoryId = $("#secondCategory").val();
+	$("#thirdCategory").html('')
+	$.ajax({
+		type: "post", 
+		data:{'secondCategoryId':secondCategoryId}, 
+		url: "/thirdCategory/list", 
+		success: function(data) {
+			$("#thirdCategory").append("<option value='0' selected>请选择...</option>");
+			$.each(data,function(index,val){
+				$("#thirdCategory").append("<option value='"+val.id+"'>"+val.name+"</option>");
+			})
+			
+		} 
+		
+	})
+ })
+  $("#secondCategoryUpdate").change(function(){
+	 var secondCategoryId = $("#secondCategoryUpdate").val();
+	$("#thirdCategoryUpdate").html('')
+	$.ajax({
+		type: "post", 
+		data:{'secondCategoryId':secondCategoryId}, 
+		url: "/thirdCategory/list", 
+		success: function(data) {
+			$("#thirdCategoryUpdate").append("<option value='0' selected>请选择...</option>");
+			$.each(data,function(index,val){
+				$("#thirdCategoryUpdate").append("<option value='"+val.id+"'>"+val.name+"</option>");
+			})
+			
+		} 
+		
+	})
+ })
+ function showSelectValue(){
+	        var selectvalue=document.myForm.originalPrice.value;  
+	        if(selectvalue==0){
+	        	document.getElementById('startTime').style.display = "none";
+	        	document.getElementById('endTime').style.display = "none";
+	        }else{
+	        	document.getElementById('startTime').style.display = "block";
+	        	document.getElementById('endTime').style.display = "block";
+	        }
+	       
+	   }
+</script>
+</body>
+</html>
