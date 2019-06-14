@@ -35,5 +35,77 @@ public class Receipt {
     @ApiModelProperty(name = "userId",value = "用户ID")
     private Integer userId;
 
+	public final Integer getId() {
+		return id;
+	}
+
+	public final void setId(Integer id) {
+		this.id = id;
+	}
+
+	public final String getType() {
+		return type;
+	}
+
+	public final void setType(String type) {
+		this.type = type;
+	}
+
+	public final Integer getOrderId() {
+		return orderId;
+	}
+
+	public final void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public final String getPhone() {
+		return phone;
+	}
+
+	public final void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public final String getContent() {
+		return content;
+	}
+
+	public final void setContent(String content) {
+		this.content = content;
+	}
+
+	public final String getCompanyName() {
+		return companyName;
+	}
+
+	public final void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public final String getDutyParagraph() {
+		return dutyParagraph;
+	}
+
+	public final void setDutyParagraph(String dutyParagraph) {
+		this.dutyParagraph = dutyParagraph;
+	}
+
+	public final Date getCreateTime() {
+		return createTime;
+	}
+
+	public final void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public final Integer getUserId() {
+		return userId;
+	}
+
+	public final void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
   
 }

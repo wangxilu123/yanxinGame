@@ -11,4 +11,12 @@ public class PsfwTransfer {
 	@ApiModelProperty(name = "psfw",value = "配送范围")
     private String psfw;
 
+	public final String getPsfw() {
+		return psfw;
+	}
+
+	public final void setPsfw(String psfw) {
+		this.psfw = psfw;
+	}
+
 }

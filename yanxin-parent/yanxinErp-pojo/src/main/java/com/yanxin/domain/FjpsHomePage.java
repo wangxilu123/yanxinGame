@@ -38,6 +38,86 @@ public class FjpsHomePage {
 
 	@ApiModelProperty(name = "psPercentage",value = "配送完成百分比")
     private String psPercentage;
+
+	public final Integer getTodayDfjNum() {
+		return todayDfjNum;
+	}
+
+	public final void setTodayDfjNum(Integer todayDfjNum) {
+		this.todayDfjNum = todayDfjNum;
+	}
+
+	public final Integer getTodayWfjNum() {
+		return todayWfjNum;
+	}
+
+	public final void setTodayWfjNum(Integer todayWfjNum) {
+		this.todayWfjNum = todayWfjNum;
+	}
+
+	public final Integer getWeekWfjNum() {
+		return weekWfjNum;
+	}
+
+	public final void setWeekWfjNum(Integer weekWfjNum) {
+		this.weekWfjNum = weekWfjNum;
+	}
+
+	public final Integer getMonthWfjNum() {
+		return monthWfjNum;
+	}
+
+	public final void setMonthWfjNum(Integer monthWfjNum) {
+		this.monthWfjNum = monthWfjNum;
+	}
+
+	public final String getFjPercentage() {
+		return fjPercentage;
+	}
+
+	public final void setFjPercentage(String fjPercentage) {
+		this.fjPercentage = fjPercentage;
+	}
+
+	public final Integer getTodayDpsNum() {
+		return todayDpsNum;
+	}
+
+	public final void setTodayDpsNum(Integer todayDpsNum) {
+		this.todayDpsNum = todayDpsNum;
+	}
+
+	public final Integer getTodayWpsNum() {
+		return todayWpsNum;
+	}
+
+	public final void setTodayWpsNum(Integer todayWpsNum) {
+		this.todayWpsNum = todayWpsNum;
+	}
+
+	public final Integer getWeekWpsNum() {
+		return weekWpsNum;
+	}
+
+	public final void setWeekWpsNum(Integer weekWpsNum) {
+		this.weekWpsNum = weekWpsNum;
+	}
+
+	public final Integer getMonthWpsNum() {
+		return monthWpsNum;
+	}
+
+	public final void setMonthWpsNum(Integer monthWpsNum) {
+		this.monthWpsNum = monthWpsNum;
+	}
+
+	public final String getPsPercentage() {
+		return psPercentage;
+	}
+
+	public final void setPsPercentage(String psPercentage) {
+		this.psPercentage = psPercentage;
+	}
     
    
 }

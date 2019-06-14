@@ -45,4 +45,96 @@ public class UserAddress implements Serializable{
 	@ApiModelProperty(name = "yn",value = "是否有效")
     private Integer yn;
 
+	public final Integer getId() {
+		return id;
+	}
+
+	public final void setId(Integer id) {
+		this.id = id;
+	}
+
+	public final Integer getUserId() {
+		return userId;
+	}
+
+	public final void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public final String getAddress() {
+		return address;
+	}
+
+	public final void setAddress(String address) {
+		this.address = address;
+	}
+
+	public final String getPhone() {
+		return phone;
+	}
+
+	public final void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public final String getRealName() {
+		return realName;
+	}
+
+	public final void setRealName(String realName) {
+		this.realName = realName;
+	}
+
+	public final String getArea() {
+		return area;
+	}
+
+	public final void setArea(String area) {
+		this.area = area;
+	}
+
+	public final String getLongitude() {
+		return longitude;
+	}
+
+	public final void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public final String getDimension() {
+		return dimension;
+	}
+
+	public final void setDimension(String dimension) {
+		this.dimension = dimension;
+	}
+
+	public final Integer getIsDef() {
+		return isDef;
+	}
+
+	public final void setIsDef(Integer isDef) {
+		this.isDef = isDef;
+	}
+
+	public final String getRemarks() {
+		return remarks;
+	}
+
+	public final void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	public final Integer getYn() {
+		return yn;
+	}
+
+	public final void setYn(Integer yn) {
+		this.yn = yn;
+	}
+
+	public static final long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

@@ -31,5 +31,131 @@ public class AlipayNotifyParam{
     private Date gmtClose; // 该笔交易结束时间。格式为yyyy-MM-dd HH:mm:ss   
     private String fundBillList; // 支付成功的各个渠道金额信息,array 
     private String passbackParams; // 公共回传参数，如果请求时传递了该参数，则返回给商户时会在异步通知时将该参数原样返回。    
+	public final String getAppId() {
+		return appId;
+	}
+	public final void setAppId(String appId) {
+		this.appId = appId;
+	}
+	public final String getTradeNo() {
+		return tradeNo;
+	}
+	public final void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
+	public final String getOutTradeNo() {
+		return outTradeNo;
+	}
+	public final void setOutTradeNo(String outTradeNo) {
+		this.outTradeNo = outTradeNo;
+	}
+	public final String getOutBizNo() {
+		return outBizNo;
+	}
+	public final void setOutBizNo(String outBizNo) {
+		this.outBizNo = outBizNo;
+	}
+	public final String getBuyerId() {
+		return buyerId;
+	}
+	public final void setBuyerId(String buyerId) {
+		this.buyerId = buyerId;
+	}
+	public final String getBuyerLogonId() {
+		return buyerLogonId;
+	}
+	public final void setBuyerLogonId(String buyerLogonId) {
+		this.buyerLogonId = buyerLogonId;
+	}
+	public final String getSellerId() {
+		return sellerId;
+	}
+	public final void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
+	}
+	public final String getSellerEmail() {
+		return sellerEmail;
+	}
+	public final void setSellerEmail(String sellerEmail) {
+		this.sellerEmail = sellerEmail;
+	}
+	public final String getTradeStatus() {
+		return tradeStatus;
+	}
+	public final void setTradeStatus(String tradeStatus) {
+		this.tradeStatus = tradeStatus;
+	}
+	public final BigDecimal getTotalAmount() {
+		return totalAmount;
+	}
+	public final void setTotalAmount(BigDecimal totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	public final BigDecimal getReceiptAmount() {
+		return receiptAmount;
+	}
+	public final void setReceiptAmount(BigDecimal receiptAmount) {
+		this.receiptAmount = receiptAmount;
+	}
+	public final BigDecimal getBuyerPayAmount() {
+		return buyerPayAmount;
+	}
+	public final void setBuyerPayAmount(BigDecimal buyerPayAmount) {
+		this.buyerPayAmount = buyerPayAmount;
+	}
+	public final BigDecimal getRefundFee() {
+		return refundFee;
+	}
+	public final void setRefundFee(BigDecimal refundFee) {
+		this.refundFee = refundFee;
+	}
+	public final String getSubject() {
+		return subject;
+	}
+	public final void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public final String getBody() {
+		return body;
+	}
+	public final void setBody(String body) {
+		this.body = body;
+	}
+	public final Date getGmtCreate() {
+		return gmtCreate;
+	}
+	public final void setGmtCreate(Date gmtCreate) {
+		this.gmtCreate = gmtCreate;
+	}
+	public final Date getGmtPayment() {
+		return gmtPayment;
+	}
+	public final void setGmtPayment(Date gmtPayment) {
+		this.gmtPayment = gmtPayment;
+	}
+	public final Date getGmtRefund() {
+		return gmtRefund;
+	}
+	public final void setGmtRefund(Date gmtRefund) {
+		this.gmtRefund = gmtRefund;
+	}
+	public final Date getGmtClose() {
+		return gmtClose;
+	}
+	public final void setGmtClose(Date gmtClose) {
+		this.gmtClose = gmtClose;
+	}
+	public final String getFundBillList() {
+		return fundBillList;
+	}
+	public final void setFundBillList(String fundBillList) {
+		this.fundBillList = fundBillList;
+	}
+	public final String getPassbackParams() {
+		return passbackParams;
+	}
+	public final void setPassbackParams(String passbackParams) {
+		this.passbackParams = passbackParams;
+	}
 
 }

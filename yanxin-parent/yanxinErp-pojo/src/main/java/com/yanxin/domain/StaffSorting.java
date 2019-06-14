@@ -31,5 +31,61 @@ public class StaffSorting {
 	@ApiModelProperty(name = "cancelReason",value = "取消原因")
     private String cancelReason;
 
+	public final Integer getId() {
+		return id;
+	}
+
+	public final void setId(Integer id) {
+		this.id = id;
+	}
+
+	public final Integer getAdminId() {
+		return adminId;
+	}
+
+	public final void setAdminId(Integer adminId) {
+		this.adminId = adminId;
+	}
+
+	public final Integer getShopId() {
+		return shopId;
+	}
+
+	public final void setShopId(Integer shopId) {
+		this.shopId = shopId;
+	}
+
+	public final Integer getOrderId() {
+		return orderId;
+	}
+
+	public final void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public final String getStatus() {
+		return status;
+	}
+
+	public final void setStatus(String status) {
+		this.status = status;
+	}
+
+	public final Date getCreateTime() {
+		return createTime;
+	}
+
+	public final void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public final String getCancelReason() {
+		return cancelReason;
+	}
+
+	public final void setCancelReason(String cancelReason) {
+		this.cancelReason = cancelReason;
+	}
+
    
 }
