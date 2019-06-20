@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.huifenqi.htg.mapper.GameMapper" >
+<mapper namespace="com.yanxin.dao.GameMapper" >
   <resultMap id="BaseResultMap" type="com.yanxin.domain.Game" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="game_name" property="gameName" jdbcType="VARCHAR" />
@@ -70,6 +70,14 @@
       </foreach>
     </where>
   </sql>
+  
+  <sql id="queryMap">
+		<if test="shopId !=null and shopId != ''">
+    		and p.shop_id=#{shopId,jdbcType=INTEGER}
+		</if>
+		
+  </sql>
+  
   <sql id="Base_Column_List" >
     id, game_name, logo_url, ios_package, android_package, ios_status, android_status, 
     download_url, company_id
@@ -94,6 +102,15 @@
     from games
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="findListAllWithCategory" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from games
+    where 1=1 
+    <include refid="queryMap" /> order by id desc
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from games
     where id = #{id,jdbcType=INTEGER}

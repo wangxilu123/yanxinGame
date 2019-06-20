@@ -40,7 +40,7 @@ import com.github.pagehelper.PageInfo;
 import net.sf.json.JSONObject;
 
 @RestController
-public class ProductController {
+public class GamesController {
 
 	@Autowired
 	ProductService productService;
@@ -50,7 +50,7 @@ public class ProductController {
 	HaixinService haixinService;
 	
 	
-	@RequestMapping(value = "/admin/product/product", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/game", method = RequestMethod.GET)
 	public ModelAndView getProduct(HttpServletRequest request,
 			@RequestParam(value = "num", defaultValue = "1") Integer num,
 			@RequestParam(value = "property",required=false) String property) throws SQLException {
@@ -68,7 +68,7 @@ public class ProductController {
 		return new ModelAndView("admin/product_list");
 	}
 	
-	@RequestMapping(value = "/product/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/game/list", method = RequestMethod.GET)
 	public ModelAndView productList(HttpServletRequest request,
 			@RequestParam(value = "pageNumber", defaultValue = "1") Integer num,
 			@RequestParam(value = "keyword",required=false) String name,
@@ -92,7 +92,7 @@ public class ProductController {
 		return this.getProduct(request, num,property);
 	}
 	
-	@RequestMapping(value = "/product/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/game/add", method = RequestMethod.GET)
 	public ModelAndView productAdd(HttpServletRequest request) {
 		SecurityContext ctx = SecurityContextHolder.getContext();  
 	    Authentication auth = ctx.getAuthentication(); 
@@ -108,54 +108,7 @@ public class ProductController {
 		/*request.setAttribute("haixinGoodsList", haixinGoodsList);*/
 		return new ModelAndView("admin/product_input");
 	}
-	
-	@RequestMapping(value = "/haixinGood/list", method = RequestMethod.POST)
-	@ResponseBody
-	public List<HaixinGood> haixinGood(HttpServletRequest request,@RequestParam(value = "goodName") String goodName) {
-		
-		List<HaixinGood> haixinGoodsList = new ArrayList<>();
-		if(!"".equals(goodName)){
-			haixinGoodsList = haixinService.findAllHaixinGoods(goodName);
-		}
-		return haixinGoodsList;
-	}
-	
-	@RequestMapping(value = "/appGood/list", method = RequestMethod.POST)
-	@ResponseBody
-	public List<Product> getGoodsByParam(HttpServletRequest request,@RequestParam(value = "goodName") String goodName) {
-		
-		List<Product> appGoodsList = new ArrayList<>();
-		if(!"".equals(goodName)){
-			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("goodName", goodName);
-			appGoodsList = productService.findProducts(map);
-		}
-		return appGoodsList;
-	}
-	@RequestMapping(value = "/secondCategory/list", method = RequestMethod.POST)
-	@ResponseBody
-	public List<ProductCategory> secondCategory(HttpServletRequest request,@RequestParam(value = "firstCategoryId",required=false) String firstCategoryId) {
-		List<ProductCategory> secondCategorys = productCategoryService.findCategoryByParentId(1, Long.valueOf(firstCategoryId));
-		return secondCategorys;
-	}
-	
-	@RequestMapping(value = "/product/id", method = RequestMethod.POST)
-	@ResponseBody
-	public ProductTransfer getProduct(HttpServletRequest request) {
-		String productId = request.getParameter("id");
-		ProductTransfer product = productService.findById(Long.valueOf(productId));
-		return product;
-	}
-	
-	
-	@RequestMapping(value = "/thirdCategory/list", method = RequestMethod.POST)
-	@ResponseBody
-	public List<ProductCategory> thirdCategory(HttpServletRequest request,@RequestParam(value = "secondCategoryId",required=false) String secondCategoryId) {
-		List<ProductCategory> thirdCategorys = productCategoryService.findCategoryByParentId(2, Long.valueOf(secondCategoryId));
-		return thirdCategorys;
-	}
-	
-	@RequestMapping(value = "/product/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/game/save", method = RequestMethod.POST)
 	public ModelAndView productSave(HttpServletRequest request,
 			@RequestParam(value = "goodName") String name,
 			@RequestParam(value = "goodCode") String goodCode,
@@ -202,7 +155,7 @@ public class ProductController {
 			return new ModelAndView("admin/error");
 		}
 	}
-	@RequestMapping(value = "/product/delete", method = RequestMethod.GET, produces = "text/json;charset=UTF-8")
+	@RequestMapping(value = "/game/delete", method = RequestMethod.GET, produces = "text/json;charset=UTF-8")
 	public String productDelete(HttpServletRequest request) throws SQLException {
 		RSResult rr = new RSResult();
 		String[] productIds = request.getParameterValues("ids");
@@ -219,7 +172,7 @@ public class ProductController {
 		return JSONObject.fromObject(rr).toString();
 	}
 	
-	@RequestMapping(value = "/product/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/game/edit", method = RequestMethod.GET)
 	public ModelAndView productEdit(HttpServletRequest request) {
 		String productId = request.getParameter("id");
 		ProductTransfer product = productService.findById(Long.valueOf(productId));
@@ -244,12 +197,12 @@ public class ProductController {
 		product.setProductImageList(productImages);
 		request.setAttribute("systemConfig",systemConfig);
 		request.setAttribute("product",product);
-		request.setAttribute("shopId", 0);
+		request.setAttribute("shopId", product.getShopId());
 		/*request.setAttribute("haixinGoodsList", haixinGoodsList);*/
 		return new ModelAndView("admin/product_input");
 	}
 	
-	@RequestMapping(value = "/product/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/game/update", method = RequestMethod.POST)
 	public ModelAndView productUpdate(HttpServletRequest request,
 			@RequestParam(value = "product.id") Integer id,
 			@RequestParam(value = "goodName") String name,

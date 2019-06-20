@@ -2,10 +2,17 @@ package com.yanxin.dao;
 
 import com.yanxin.domain.Game;
 import com.yanxin.domain.GameExample;
+import com.yanxin.domain.ProductTransfer;
+
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface GameMapper {
+	
+	public List<Game> findListAllWithCategory(Map<String,Object> map);
+	
     int countByExample(GameExample example);
 
     int deleteByExample(GameExample example);

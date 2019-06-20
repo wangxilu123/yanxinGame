@@ -49,7 +49,7 @@ public class OrderController {
 		SecurityContext ctx = SecurityContextHolder.getContext();
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
-		List<Order> orders = orderService.selectParseStatus(admin.getShopId());
+		List<Order> orders = orderService.selectParseStatus(admin.getCompanyId());
 		PageInfo<Order> pager = new PageInfo<>(orders);
 		request.setAttribute("pager", pager);
 		request.setAttribute("admin", admin);
@@ -72,7 +72,7 @@ public class OrderController {
 			Authentication auth = ctx.getAuthentication();
 			Admin admin = (Admin) auth.getPrincipal();
 			Map<String, Object> map = new HashMap<>();
-			map.put("storeId", admin.getShopId());
+			map.put("storeId", admin.getCompanyId());
 			if(property.equals("orderNum")) {
 				PageHelper.startPage(num, 10);
 				map.put("orderNum", name);
@@ -186,7 +186,7 @@ public class OrderController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("storeId", admin.getShopId());
+		map.put("storeId", admin.getCompanyId());
 		if(property.equals("orderNum")) {
 			map.put("orderNum", name);
 		}else if(property.equals("status")) {

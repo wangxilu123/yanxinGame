@@ -84,7 +84,7 @@ public class PostageController {
 		
 		List<Shop> shopList = shopService.findListAll();
 		request.setAttribute("shopList", shopList);
-		request.setAttribute("shopId",admin.getShopId());
+		request.setAttribute("shopId",admin.getCompanyId());
 		return new ModelAndView("postage/postage_add");
 	}
 	

@@ -1,0 +1,256 @@
+DEBUG | 2019-06-19 17:24:11,929 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting 1 file  to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:24:11,933 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting: C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:24:11,933 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Instrumenting class C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class
+DEBUG | 2019-06-19 17:24:11,933 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Working on file:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class
+DEBUG | 2019-06-19 17:24:11,959 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:11:1:MI:183:java/lang/Object:<init>:()V;
+DEBUG | 2019-06-19 17:24:11,960 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:14:2:LDC:Lcom/yanxin/eureka/register/ServiceRegistryApplication;;MI:184:org/springframework/boot/SpringApplication:run:(Ljava/lang/Object;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;;87;
+DEBUG | 2019-06-19 17:24:11,960 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:15:3:F:178:com/yanxin/eureka/register/ServiceRegistryApplication:log:Lorg/slf4j/Logger;;LDC:ServiceRegistryApplication started;MI:185:org/slf4j/Logger:info:(Ljava/lang/String;)V;
+DEBUG | 2019-06-19 17:24:11,960 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:16:4:
+DEBUG | 2019-06-19 17:24:11,960 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:12:5:LDC:Lcom/yanxin/eureka/register/ServiceRegistryApplication;;MI:184:org/slf4j/LoggerFactory:getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;;F:179:com/yanxin/eureka/register/ServiceRegistryApplication:log:Lorg/slf4j/Logger;;
+DEBUG | 2019-06-19 17:24:11,967 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:0: Registering label (1) L246550802
+DEBUG | 2019-06-19 17:24:11,968 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:11: Registering line (2) L246550802
+DEBUG | 2019-06-19 17:24:11,971 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:11: Registering label (3) L345281752
+DEBUG | 2019-06-19 17:24:11,971 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:0: Registering label (4) L1896294051
+DEBUG | 2019-06-19 17:24:11,971 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:14: Registering line (5) L1896294051
+DEBUG | 2019-06-19 17:24:11,971 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:14: Registering label (6) L1684015092
+DEBUG | 2019-06-19 17:24:11,971 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:15: Registering line (7) L1684015092
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:15: Registering label (8) L1209669119
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:16: Registering line (9) L1209669119
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:16: Registering label (10) L2014866032
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:0: Registering label (11) L811760110
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:12: Registering line (12) L811760110
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== Detected duplicated code =============
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== End of detected duplicated code ======
+DEBUG | 2019-06-19 17:24:11,972 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Migrating classmap in projectData to store in *.ser file: com/yanxin/eureka/register/ServiceRegistryApplication
+DEBUG | 2019-06-19 17:24:11,976 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Assigned 5 counters for class:com/yanxin/eureka/register/ServiceRegistryApplication
+DEBUG | 2019-06-19 17:24:11,988 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(1):L1640639994 
+DEBUG | 2019-06-19 17:24:11,988 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L246550802
+DEBUG | 2019-06-19 17:24:11,988 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L246550802):null
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L246550802
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L246550802):null
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(3):L1270144618 
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L345281752
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L345281752):null
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L345281752
+DEBUG | 2019-06-19 17:24:11,989 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L345281752):null
+DEBUG | 2019-06-19 17:24:11,990 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(4):L183284570 
+DEBUG | 2019-06-19 17:24:11,990 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L1896294051
+DEBUG | 2019-06-19 17:24:11,990 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1896294051):null
+DEBUG | 2019-06-19 17:24:11,990 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L1896294051
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1896294051):null
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(6):L1607305514 
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L1684015092
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1684015092):null
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L1684015092
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1684015092):null
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(8):L146305349 
+DEBUG | 2019-06-19 17:24:11,991 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L1209669119
+DEBUG | 2019-06-19 17:24:11,992 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1209669119):null
+DEBUG | 2019-06-19 17:24:11,992 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L1209669119
+DEBUG | 2019-06-19 17:24:11,992 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1209669119):null
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(10):L1686369710 
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:10:L2014866032
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L2014866032):null
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:10:L2014866032
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L2014866032):null
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(11):L942518407 
+DEBUG | 2019-06-19 17:24:11,993 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L811760110
+DEBUG | 2019-06-19 17:24:11,994 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L811760110):null
+DEBUG | 2019-06-19 17:24:11,994 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L811760110
+DEBUG | 2019-06-19 17:24:11,994 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L811760110):null
+DEBUG | 2019-06-19 17:24:12,002 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | 
+DEBUG | 2019-06-19 17:24:12,004 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Writing instrumented class into:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class
+INFO | 2019-06-19 17:24:12,027 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+INFO | 2019-06-19 17:24:12,035 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+DEBUG | 2019-06-19 17:24:12,036 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.InstrumentMain | Instrument time: 144ms
+DEBUG | 2019-06-19 17:24:19,768 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting 1 file  to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:24:19,772 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting: C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:24:19,772 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Instrumenting class C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class
+DEBUG | 2019-06-19 17:24:19,772 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Working on file:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class
+DEBUG | 2019-06-19 17:24:19,803 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:19:1:MI:183:java/lang/Object:<init>:()V;
+DEBUG | 2019-06-19 17:24:19,803 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:22:2:LDC:Lcom/yanxin/ZuulApplication;;MI:184:org/springframework/boot/SpringApplication:run:(Ljava/lang/Object;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;;87;
+DEBUG | 2019-06-19 17:24:19,803 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:23:3:
+DEBUG | 2019-06-19 17:24:19,804 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:29:4:89;MI:183:org/springframework/cloud/netflix/zuul/filters/ZuulProperties:<init>:()V;176;
+DEBUG | 2019-06-19 17:24:19,812 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:0: Registering label (1) L1920387277
+DEBUG | 2019-06-19 17:24:19,814 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:19: Registering line (2) L1920387277
+DEBUG | 2019-06-19 17:24:19,816 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:19: Registering label (3) L786041152
+DEBUG | 2019-06-19 17:24:19,816 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:0: Registering label (4) L897074030
+DEBUG | 2019-06-19 17:24:19,817 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:22: Registering line (5) L897074030
+DEBUG | 2019-06-19 17:24:19,817 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:22: Registering label (6) L1885996206
+DEBUG | 2019-06-19 17:24:19,817 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:23: Registering line (7) L1885996206
+DEBUG | 2019-06-19 17:24:19,817 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:23: Registering label (8) L1859039536
+DEBUG | 2019-06-19 17:24:19,817 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:0: Registering label (9) L278934944
+DEBUG | 2019-06-19 17:24:19,818 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:29: Registering line (10) L278934944
+DEBUG | 2019-06-19 17:24:19,818 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:29: Registering label (11) L1739876329
+DEBUG | 2019-06-19 17:24:19,818 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== Detected duplicated code =============
+DEBUG | 2019-06-19 17:24:19,818 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== End of detected duplicated code ======
+DEBUG | 2019-06-19 17:24:19,818 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Migrating classmap in projectData to store in *.ser file: com/yanxin/ZuulApplication
+DEBUG | 2019-06-19 17:24:19,822 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Assigned 4 counters for class:com/yanxin/ZuulApplication
+DEBUG | 2019-06-19 17:24:19,839 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(1):L497359413 
+DEBUG | 2019-06-19 17:24:19,839 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L1920387277
+DEBUG | 2019-06-19 17:24:19,839 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1920387277):null
+DEBUG | 2019-06-19 17:24:19,839 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L1920387277
+DEBUG | 2019-06-19 17:24:19,839 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1920387277):null
+DEBUG | 2019-06-19 17:24:19,839 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(3):L1151593579 
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L786041152
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L786041152):null
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L786041152
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L786041152):null
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(4):L22756955 
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L897074030
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L897074030):null
+DEBUG | 2019-06-19 17:24:19,840 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L897074030
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L897074030):null
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(6):L1640639994 
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L1885996206
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1885996206):null
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L1885996206
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1885996206):null
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(8):L1263793464 
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L1859039536
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1859039536):null
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L1859039536
+DEBUG | 2019-06-19 17:24:19,841 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1859039536):null
+DEBUG | 2019-06-19 17:24:19,842 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(9):L2074185499 
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:9:L278934944
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L278934944):null
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:9:L278934944
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L278934944):null
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(11):L797925218 
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L1739876329
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1739876329):null
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L1739876329
+DEBUG | 2019-06-19 17:24:19,843 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1739876329):null
+DEBUG | 2019-06-19 17:24:19,850 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | 
+DEBUG | 2019-06-19 17:24:19,851 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Writing instrumented class into:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class
+INFO | 2019-06-19 17:24:19,875 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+INFO | 2019-06-19 17:24:19,884 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+DEBUG | 2019-06-19 17:24:19,884 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.InstrumentMain | Instrument time: 148ms
+DEBUG | 2019-06-19 17:37:26,106 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting 1 file  to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:37:26,109 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting: C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:37:26,109 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Instrumenting class C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class
+DEBUG | 2019-06-19 17:37:26,109 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Working on file:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class
+DEBUG | 2019-06-19 17:37:26,133 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:11:1:MI:183:java/lang/Object:<init>:()V;
+DEBUG | 2019-06-19 17:37:26,134 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:14:2:LDC:Lcom/yanxin/eureka/register/ServiceRegistryApplication;;MI:184:org/springframework/boot/SpringApplication:run:(Ljava/lang/Object;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;;87;
+DEBUG | 2019-06-19 17:37:26,134 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:15:3:F:178:com/yanxin/eureka/register/ServiceRegistryApplication:log:Lorg/slf4j/Logger;;LDC:ServiceRegistryApplication started;MI:185:org/slf4j/Logger:info:(Ljava/lang/String;)V;
+DEBUG | 2019-06-19 17:37:26,134 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:16:4:
+DEBUG | 2019-06-19 17:37:26,135 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:12:5:LDC:Lcom/yanxin/eureka/register/ServiceRegistryApplication;;MI:184:org/slf4j/LoggerFactory:getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;;F:179:com/yanxin/eureka/register/ServiceRegistryApplication:log:Lorg/slf4j/Logger;;
+DEBUG | 2019-06-19 17:37:26,142 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:0: Registering label (1) L897074030
+DEBUG | 2019-06-19 17:37:26,143 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:11: Registering line (2) L897074030
+DEBUG | 2019-06-19 17:37:26,145 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:11: Registering label (3) L1684015092
+DEBUG | 2019-06-19 17:37:26,145 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:0: Registering label (4) L1209669119
+DEBUG | 2019-06-19 17:37:26,145 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:14: Registering line (5) L1209669119
+DEBUG | 2019-06-19 17:37:26,145 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:14: Registering label (6) L2014866032
+DEBUG | 2019-06-19 17:37:26,145 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:15: Registering line (7) L2014866032
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:15: Registering label (8) L811760110
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:16: Registering line (9) L811760110
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:16: Registering label (10) L1415157681
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:0: Registering label (11) L1291113768
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/eureka/register/ServiceRegistryApplication:12: Registering line (12) L1291113768
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== Detected duplicated code =============
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== End of detected duplicated code ======
+DEBUG | 2019-06-19 17:37:26,146 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Migrating classmap in projectData to store in *.ser file: com/yanxin/eureka/register/ServiceRegistryApplication
+DEBUG | 2019-06-19 17:37:26,149 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Assigned 5 counters for class:com/yanxin/eureka/register/ServiceRegistryApplication
+DEBUG | 2019-06-19 17:37:26,163 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(1):L323326911 
+DEBUG | 2019-06-19 17:37:26,163 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L897074030
+DEBUG | 2019-06-19 17:37:26,163 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L897074030):null
+DEBUG | 2019-06-19 17:37:26,163 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L897074030
+DEBUG | 2019-06-19 17:37:26,163 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L897074030):null
+DEBUG | 2019-06-19 17:37:26,164 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(3):L797925218 
+DEBUG | 2019-06-19 17:37:26,164 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L1684015092
+DEBUG | 2019-06-19 17:37:26,164 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1684015092):null
+DEBUG | 2019-06-19 17:37:26,164 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L1684015092
+DEBUG | 2019-06-19 17:37:26,164 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1684015092):null
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(4):L146305349 
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L1209669119
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1209669119):null
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L1209669119
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1209669119):null
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(6):L1686369710 
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L2014866032
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L2014866032):null
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L2014866032
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L2014866032):null
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(8):L194706439 
+DEBUG | 2019-06-19 17:37:26,165 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L811760110
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L811760110):null
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L811760110
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L811760110):null
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(10):L942518407 
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:10:L1415157681
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1415157681):null
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:10:L1415157681
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1415157681):null
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(11):L134310351 
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L1291113768
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1291113768):null
+DEBUG | 2019-06-19 17:37:26,166 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L1291113768
+DEBUG | 2019-06-19 17:37:26,167 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1291113768):null
+DEBUG | 2019-06-19 17:37:26,172 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | 
+DEBUG | 2019-06-19 17:37:26,174 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Writing instrumented class into:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-eureka-register\target\generated-classes\cobertura\com\yanxin\eureka\register\ServiceRegistryApplication.class
+INFO | 2019-06-19 17:37:26,194 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+INFO | 2019-06-19 17:37:26,202 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+DEBUG | 2019-06-19 17:37:26,203 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.InstrumentMain | Instrument time: 122ms
+DEBUG | 2019-06-19 17:37:32,410 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting 1 file  to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:37:32,413 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CodeInstrumentationTask$LoggerWrapper | Instrumenting: C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class to C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura
+DEBUG | 2019-06-19 17:37:32,413 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Instrumenting class C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class
+DEBUG | 2019-06-19 17:37:32,413 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Working on file:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class
+DEBUG | 2019-06-19 17:37:32,442 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:19:1:MI:183:java/lang/Object:<init>:()V;
+DEBUG | 2019-06-19 17:37:32,443 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:22:2:LDC:Lcom/yanxin/ZuulApplication;;MI:184:org/springframework/boot/SpringApplication:run:(Ljava/lang/Object;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;;87;
+DEBUG | 2019-06-19 17:37:32,443 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:23:3:
+DEBUG | 2019-06-19 17:37:32,445 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass1.DetectDuplicatedCodeClassVisitor | SIGNATURE:29:4:89;MI:183:org/springframework/cloud/netflix/zuul/filters/ZuulProperties:<init>:()V;176;
+DEBUG | 2019-06-19 17:37:32,451 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:0: Registering label (1) L1920387277
+DEBUG | 2019-06-19 17:37:32,452 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:19: Registering line (2) L1920387277
+DEBUG | 2019-06-19 17:37:32,456 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:19: Registering label (3) L786041152
+DEBUG | 2019-06-19 17:37:32,457 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:0: Registering label (4) L897074030
+DEBUG | 2019-06-19 17:37:32,457 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:22: Registering line (5) L897074030
+DEBUG | 2019-06-19 17:37:32,457 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:22: Registering label (6) L1885996206
+DEBUG | 2019-06-19 17:37:32,458 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:23: Registering line (7) L1885996206
+DEBUG | 2019-06-19 17:37:32,458 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:23: Registering label (8) L1859039536
+DEBUG | 2019-06-19 17:37:32,458 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:0: Registering label (9) L278934944
+DEBUG | 2019-06-19 17:37:32,458 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:29: Registering line (10) L278934944
+DEBUG | 2019-06-19 17:37:32,459 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | com/yanxin/ZuulApplication:29: Registering label (11) L1739876329
+DEBUG | 2019-06-19 17:37:32,459 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== Detected duplicated code =============
+DEBUG | 2019-06-19 17:37:32,459 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | =============== End of detected duplicated code ======
+DEBUG | 2019-06-19 17:37:32,459 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Migrating classmap in projectData to store in *.ser file: com/yanxin/ZuulApplication
+DEBUG | 2019-06-19 17:37:32,463 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Assigned 4 counters for class:com/yanxin/ZuulApplication
+DEBUG | 2019-06-19 17:37:32,480 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(1):L497359413 
+DEBUG | 2019-06-19 17:37:32,480 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L1920387277
+DEBUG | 2019-06-19 17:37:32,480 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1920387277):null
+DEBUG | 2019-06-19 17:37:32,480 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:1:L1920387277
+DEBUG | 2019-06-19 17:37:32,481 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1920387277):null
+DEBUG | 2019-06-19 17:37:32,481 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(3):L1151593579 
+DEBUG | 2019-06-19 17:37:32,481 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L786041152
+DEBUG | 2019-06-19 17:37:32,481 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L786041152):null
+DEBUG | 2019-06-19 17:37:32,481 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:3:L786041152
+DEBUG | 2019-06-19 17:37:32,482 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L786041152):null
+DEBUG | 2019-06-19 17:37:32,482 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(4):L22756955 
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L897074030
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L897074030):null
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:4:L897074030
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L897074030):null
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(6):L1640639994 
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L1885996206
+DEBUG | 2019-06-19 17:37:32,483 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1885996206):null
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:6:L1885996206
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1885996206):null
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(8):L1263793464 
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L1859039536
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1859039536):null
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:8:L1859039536
+DEBUG | 2019-06-19 17:37:32,484 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1859039536):null
+DEBUG | 2019-06-19 17:37:32,485 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(9):L2074185499 
+DEBUG | 2019-06-19 17:37:32,485 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:9:L278934944
+DEBUG | 2019-06-19 17:37:32,485 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L278934944):null
+DEBUG | 2019-06-19 17:37:32,485 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:9:L278934944
+DEBUG | 2019-06-19 17:37:32,485 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L278934944):null
+DEBUG | 2019-06-19 17:37:32,486 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.pass3.InjectCodeTouchPointListener | Looking for jumps going to event(11):L797925218 
+DEBUG | 2019-06-19 17:37:32,486 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L1739876329
+DEBUG | 2019-06-19 17:37:32,486 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1739876329):null
+DEBUG | 2019-06-19 17:37:32,486 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | Label found for eventId:11:L1739876329
+DEBUG | 2019-06-19 17:37:32,486 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.tp.ClassMap | label2sourcePoints.get(L1739876329):null
+DEBUG | 2019-06-19 17:37:32,494 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | 
+DEBUG | 2019-06-19 17:37:32,495 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.CoberturaInstrumenter | Writing instrumented class into:C:\Users\lulu\git\yanxinGame\yanxin-parent\yanxin-framework\yanxin-zuul\target\generated-classes\cobertura\com\yanxin\ZuulApplication.class
+INFO | 2019-06-19 17:37:32,519 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+INFO | 2019-06-19 17:37:32,529 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.coveragedata.CoverageDataFileHandler | Cobertura: Saved information on 1 classes.
+DEBUG | 2019-06-19 17:37:32,530 | [FILE_NAME_IS_UNDEFINED,,,] | main net.sourceforge.cobertura.instrument.InstrumentMain | Instrument time: 152ms

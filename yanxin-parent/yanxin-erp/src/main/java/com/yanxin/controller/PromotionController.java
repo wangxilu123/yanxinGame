@@ -56,7 +56,7 @@ public class PromotionController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 		List<Promotion> ptomotions = promotionService.findPromotionsWithParam(map);
 		PageInfo<Promotion> pager = new PageInfo<>(ptomotions);
 		request.setAttribute("pager", pager);
@@ -76,7 +76,7 @@ public class PromotionController {
 			Admin admin = (Admin) auth.getPrincipal();
 			Map<String, Object> map = new HashMap<>();
 			map.put(property, name);
-			map.put("shopId", admin.getShopId());
+			map.put("shopId", admin.getCompanyId());
 			List<Promotion> ptomotions = promotionService.findPromotionsWithParam(map);
 			PageInfo<Promotion> pager = new PageInfo<>(ptomotions);
 			request.setAttribute("pager", pager);
@@ -109,14 +109,14 @@ public class PromotionController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 		List<Coupon> coupons = couponService.findCouponsWithParam(map);
 		List<Product> products = productService.findProducts(map);
 		List<ProductCategory> productCategoryTreeList = productCategoryService.getProductCategory(0);
 		request.setAttribute("productCategoryTreeList", productCategoryTreeList);
 		request.setAttribute("allCoupon", coupons);
 		request.setAttribute("products", products);
-		request.setAttribute("shopId", admin.getShopId());
+		request.setAttribute("shopId", admin.getCompanyId());
 		return new ModelAndView("admin/promotion_input");
 	}
 	
@@ -159,13 +159,13 @@ public class PromotionController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 		List<Coupon> coupons = couponService.findCouponsWithParam(map);
 		List<Product> products = productService.findProducts(map);
 		List<ProductCategory> productCategoryTreeList = productCategoryService.getProductCategory(0);
 		request.setAttribute("productCategoryTreeList", productCategoryTreeList);
 		request.setAttribute("allCoupon", coupons);
-		request.setAttribute("shopId", admin.getShopId());
+		request.setAttribute("shopId", admin.getCompanyId());
 		request.setAttribute("products", products);
 		request.setAttribute("promotion", promotion);
 		return new ModelAndView("admin/promotion_input");

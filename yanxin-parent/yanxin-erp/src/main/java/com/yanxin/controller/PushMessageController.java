@@ -61,7 +61,7 @@ public class PushMessageController {
 	    Authentication auth = ctx.getAuthentication(); 
 	    Admin admin = (Admin) auth.getPrincipal();
 	    request.setAttribute("admin", admin);
-		PageInfo<PushMessage> pager = pushMessageService.findByPage(admin.getShopId(),pageNum, pageSize);
+		PageInfo<PushMessage> pager = pushMessageService.findByPage(admin.getCompanyId(),pageNum, pageSize);
 		
 		
 		request.setAttribute("pager", pager);
@@ -82,7 +82,7 @@ public class PushMessageController {
 		List<Shop> shopList = shopService.findListAll();
 		request.setAttribute("shopList", shopList);
 		request.setAttribute("systemConfig",systemConfig);
-		request.setAttribute("shopId",admin.getShopId());
+		request.setAttribute("shopId",admin.getCompanyId());
 		return new ModelAndView("pushMessage/pushMessage_add");
 	}
 	
@@ -104,7 +104,7 @@ public class PushMessageController {
     		map.put("urlType", pushMessage.getUrlType());
     		map.put("notifyUrl", pushMessage.getNotifyUrl()!=null&&!"".equals(pushMessage.getNotifyUrl())?pushMessage.getNotifyUrl():"");
     		map.put("goodcode", pushMessage.getProductId()!=null&&!"".equals(pushMessage.getProductId())?pushMessage.getProductId().toString():"");
-    		map.put("shopId", pushMessage.getShopId().toString());
+    		map.put("shopId", "");
     		JSONArray json = JSONArray.fromObject(map); 
     		
         	new UmmessageSend().sendMessage(pushMessage.getPushType(),json.toString(),pushMessage.getDescription());

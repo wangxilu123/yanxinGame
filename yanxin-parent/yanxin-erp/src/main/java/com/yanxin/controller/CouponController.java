@@ -56,7 +56,7 @@ public class CouponController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 		List<Coupon> coupons = couponService.findCouponsWithParam(map);
 		for(Coupon coupon:coupons) {
 			int usedNumber = couponService.findCouponCodeListCount(coupon.getId(), StateCode.MSG_USED_STATE);
@@ -82,7 +82,7 @@ public class CouponController {
 			Admin admin = (Admin) auth.getPrincipal();
 			Map<String, Object> map = new HashMap<>();
 			map.put("name", name);
-			map.put("shopId", admin.getShopId());
+			map.put("shopId", admin.getCompanyId());
 			List<Coupon> coupons = couponService.findCouponsWithParam(map);
 			PageInfo<Coupon> pager = new PageInfo<>(coupons);
 			request.setAttribute("pager", pager);
@@ -98,11 +98,11 @@ public class CouponController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 //		List<Product> products = productService.findProducts(map);
 		List<ProductCategory> productCategoryTreeList = productCategoryService.getFisrsrProductCategory(0);
 		request.setAttribute("productCategoryTreeList", productCategoryTreeList);
-		request.setAttribute("shopId", admin.getShopId());
+		request.setAttribute("shopId", admin.getCompanyId());
 //		request.setAttribute("products", products);
 		return new ModelAndView("admin/coupon_input");
 	}
@@ -172,11 +172,11 @@ public class CouponController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 		List<Product> products = productService.findProducts(map);
 		List<ProductCategory> productCategoryTreeList = productCategoryService.getProductCategory(0);
 		request.setAttribute("productCategoryTreeList", productCategoryTreeList);
-		request.setAttribute("shopId", admin.getShopId());
+		request.setAttribute("shopId", admin.getCompanyId());
 		request.setAttribute("coupon", coupon);
 		request.setAttribute("products", products);
 		return new ModelAndView("admin/coupon_input");

@@ -65,7 +65,7 @@ public class MotionController {
 	    Authentication auth = ctx.getAuthentication(); 
 	    Admin admin = (Admin) auth.getPrincipal();
 	    
-		PageInfo<Motion> pager = motionService.findByPage(admin.getShopId(),pageNum, pageSize);
+		PageInfo<Motion> pager = motionService.findByPage(admin.getCompanyId(),pageNum, pageSize);
 		
 	    request.setAttribute("admin", admin);
 		request.setAttribute("pager", pager);
@@ -85,7 +85,7 @@ public class MotionController {
 		
 		List<Shop> shopList = shopService.findListAll();
 		request.setAttribute("shopList", shopList);
-		request.setAttribute("shopId",admin.getShopId());
+		request.setAttribute("shopId",admin.getCompanyId());
 		request.setAttribute("systemConfig",systemConfig);
 		return new ModelAndView("motion/motion_add");
 	}
@@ -125,7 +125,7 @@ public class MotionController {
 		systemConfig.setAllowedUploadImageExtension("png,jpg");
 	
 		Map<String,Object> map = new HashMap<>();
-	    map.put("shopId", admin.getShopId());
+	    map.put("shopId", admin.getCompanyId());
 		List<ProductTransfer> products = productService.findListAllWithCategory(map);
 		PageInfo<ProductTransfer> pager = new PageInfo<>(products);
 		request.setAttribute("pager", pager);
@@ -146,7 +146,7 @@ public class MotionController {
 		    Authentication auth = ctx.getAuthentication(); 
 		    Admin admin = (Admin) auth.getPrincipal();
 		    Map<String,Object> map = new HashMap<>();
-		    map.put("shopId", admin.getShopId());
+		    map.put("shopId", admin.getCompanyId());
 		    map.put("name", name);
 			List<ProductTransfer> products = productService.findListAllWithCategory(map);
 			PageInfo<ProductTransfer> pager = new PageInfo<>(products);

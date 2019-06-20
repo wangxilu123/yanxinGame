@@ -64,7 +64,7 @@ public class AdvertisementController {
 	    Authentication auth = ctx.getAuthentication(); 
 	    Admin admin = (Admin) auth.getPrincipal();
 	    request.setAttribute("admin", admin);
-		PageInfo<Advertisement> pager = advertisementService.findByPage(admin.getShopId(),pageNum, pageSize);
+		PageInfo<Advertisement> pager = advertisementService.findByPage(admin.getCompanyId(),pageNum, pageSize);
 		
 		
 		request.setAttribute("pager", pager);
@@ -85,7 +85,7 @@ public class AdvertisementController {
 		List<Shop> shopList = shopService.findListAll();
 		request.setAttribute("shopList", shopList);
 		request.setAttribute("systemConfig",systemConfig);
-		request.setAttribute("shopId",admin.getShopId());
+		request.setAttribute("shopId",admin.getCompanyId());
 		return new ModelAndView("advertisement/advertisement_add");
 	}
 	

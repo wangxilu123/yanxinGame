@@ -37,7 +37,7 @@ public class ArticleController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
 		List<Article> articles = articleService.findArticlesByParam(map);
 		PageInfo<Article> pager = new PageInfo<>(articles);
 		request.setAttribute("pager", pager);
@@ -58,7 +58,7 @@ public class ArticleController {
 			Admin admin = (Admin) auth.getPrincipal();
 			Map<String, Object> map = new HashMap<>();
 			map.put("name", name);
-			map.put("shopId", admin.getShopId());
+			map.put("shopId", admin.getCompanyId());
 			List<Article> articles = articleService.findArticlesByParam(map);
 			PageInfo<Article> pager = new PageInfo<>(articles);
 			request.setAttribute("pager", pager);
@@ -74,8 +74,8 @@ public class ArticleController {
 		Authentication auth = ctx.getAuthentication();
 		Admin admin = (Admin) auth.getPrincipal();
 		Map<String, Object> map = new HashMap<>();
-		map.put("shopId", admin.getShopId());
-		request.setAttribute("shopId", admin.getShopId());
+		map.put("shopId", admin.getCompanyId());
+		request.setAttribute("shopId", admin.getCompanyId());
 		return new ModelAndView("admin/article_input");
 	}
 	

@@ -12,7 +12,7 @@ public class YanxinApplication {
 
 	public static void main(String[] args) {
 		
-		SpringApplication.run(YanxinApplication.class, args);
+		SpringApplication.run(YanxinApplication.class, args); 
 	}
 	
 	private CorsConfiguration buildConfig() {

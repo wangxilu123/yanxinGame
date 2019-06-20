@@ -1,7 +1,7 @@
 package com.yanxin.domain;
 
 public class AdminLogin {
-	private Integer shopId;
+	private Integer companyId;
 	
 	private Integer adminId;
 	
@@ -17,10 +17,6 @@ public class AdminLogin {
 	
 	private String role;
 
-	public Integer getShopId() {
-		return shopId;
-	}
-
 	public String getRole() {
 		return role;
 	}
@@ -29,8 +25,12 @@ public class AdminLogin {
 		this.role = role;
 	}
 
-	public void setShopId(Integer shopId) {
-		this.shopId = shopId;
+	public final Integer getCompanyId() {
+		return companyId;
+	}
+
+	public final void setCompanyId(Integer companyId) {
+		this.companyId = companyId;
 	}
 
 	public Integer getAdminId() {

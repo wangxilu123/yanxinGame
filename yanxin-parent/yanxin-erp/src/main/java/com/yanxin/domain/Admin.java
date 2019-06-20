@@ -54,9 +54,9 @@ public class Admin implements UserDetails{
     
     private List<Role> roleList;
     
-    private Integer shopId;
+    private Integer companyId;
     
-    private String shopName;
+    private String companyName;
     
     private String phone;
 
@@ -112,7 +112,15 @@ public class Admin implements UserDetails{
         return id;
     }
 
-    public void setId(Long id) {
+    public final Integer getCompanyId() {
+		return companyId;
+	}
+
+	public final void setCompanyId(Integer companyId) {
+		this.companyId = companyId;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 
@@ -287,19 +295,12 @@ public class Admin implements UserDetails{
 		this.authorities = authorities;
 	}
 
-	public Integer getShopId() {
-		return shopId;
+	public final String getCompanyName() {
+		return companyName;
 	}
 
-	public void setShopId(Integer shopId) {
-		this.shopId = shopId;
+	public final void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
-	public String getShopName() {
-		return shopName;
-	}
-
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
-	}
 }
